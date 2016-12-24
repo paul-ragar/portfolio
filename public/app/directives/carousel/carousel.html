@@ -1,0 +1,11 @@
+<div class="carousel-outer-wrap">
+  <button type="button"  ng-click="scrollRight()" ng-style="leftBtn" name="button"></button>
+  <div class="image-container">
+    <div class="image-wrapper" ng-style="{marginLeft: (carousel.marginLeft + 'px')}">
+      <li ng-repeat="image in images">
+        <div class="specify-index">{{$index + 1}}</div>
+      </li>
+    </div>
+  </div>
+  <button type="button" ng-style="rightBtn" ng-click="scrollLeft()" name="button"></button>
+</div>

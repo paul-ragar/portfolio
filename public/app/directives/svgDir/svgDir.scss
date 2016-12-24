@@ -1,0 +1,48 @@
+.box {
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 2px;
+  animation: scaledown 1s linear forwards;
+  animation-delay: 3s;
+  .paul-svg {
+    stroke-dasharray: 3500;
+    stroke-dashoffset: 3500;
+    animation: dash 3s linear forwards;
+    animation-delay: 0s;
+  }
+}
+
+
+
+@keyframes dash {
+  90% {
+    fill: rgba(0, 0, 0, 0);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: rgba(0, 0, 0, 1);
+  }
+}
+@keyframes scaledown {
+  0% {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    background-color: white;
+    position: absolute;
+    transform: translate(0, 0);
+    top: 15px;
+    left: 20px;
+    height: 75px;
+    width: 75px;
+
+  }
+}

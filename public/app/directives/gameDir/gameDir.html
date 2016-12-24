@@ -1,0 +1,20 @@
+<div class="game-container">
+  <div class="score-container">
+    <p>Score:</p><p>{{score}}</p>
+  </div>
+
+  <div class="screen" tabindex="0" ng-keydown="moveDude($event.keyCode)">
+
+    <div class="little-dude" ng-style="{left: (coord.x + 'px'), top: (coord.y + 'px')}">
+    </div>
+    <div class="tail" ng-show="checkTail" ng-style="{left: (currentCell.x + 'px'), top: (currentCell.y + 'px')}" ng-repeat="bit in tail">
+
+    </div>
+
+    <div class="fruit-box" ng-style="{left: (fruit.x + 'px'), top: (fruit.y + 'px')}" ng-init="newFruit()">
+      <div class="fruit">
+
+      </div>
+    </div>
+  </div>
+</div>
