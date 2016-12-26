@@ -48,7 +48,43 @@ body {
         width: 20px;
         border-radius: 50%;
         background-color: purple;
-
+      }
+    }
+    .pause-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(40, 40, 40, .7);
+      height: 50px;
+      width: 130px;
+      p {
+        font-family: $font;
+        font-size: 28px;
+        color: rgb(240, 240, 240);
+      }
+    }
+    .gameOver-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(40, 40, 40, .7);
+      height: 50px;
+      width: 180px;
+      p {
+        font-family: $font;
+        font-size: 28px;
+        color: rgb(240, 240, 240);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
       }
     }
   }
