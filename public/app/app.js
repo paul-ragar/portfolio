@@ -1,4 +1,4 @@
-angular.module('portfolio', ['ui.router'])
+angular.module('portfolio', ['ui.router', 'ngAnimate'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
