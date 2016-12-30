@@ -13,7 +13,7 @@ app.use(express.static(__dirname + './../public'));
 // ======== Endpoints ========
 
 
-const port = 8000;
+const port = 80;
 app.listen(port, () => {
   console.log('Listening on port: ' + port);
 })
