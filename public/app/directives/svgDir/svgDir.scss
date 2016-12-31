@@ -1,20 +1,15 @@
-.svg-container {
-  height: 100%;
-  width: 100%;
-  display: inline;
-  .box {
-    height: 300px;
-    width: 300px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    .paul-svg {
-      stroke: white;
-      stroke-dasharray: 3500;
-      stroke-dashoffset: 3500;
-      animation: dash 2.3s linear forwards;
-    }
+.box {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  .paul-svg {
+    stroke: white;
+    stroke-dasharray: 3500;
+    stroke-dashoffset: 3500;
+    animation: dash 2.3s linear forwards;
   }
 }
 
