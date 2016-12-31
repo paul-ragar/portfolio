@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:500,400,500,700");
+.home-view-container {
+  display: flex;
+  flex-direction: column; }
+  .home-view-container .svg-section {
+    width: 100%;
+    height: 100vh;
+    background-color: #3d3d3d; }
+  .home-view-container .about-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative; }
+    .home-view-container .about-section .info-side {
+      height: 100%;
+      width: 50%;
+      background-color: #bc6049;
+      position: relative; }
+      .home-view-container .about-section .info-side h2 {
+        position: absolute;
+        color: #f0f0f0;
+        font-size: 80px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+    .home-view-container .about-section img {
+      height: 150px;
+      background-position: center;
+      position: absolute;
+      border-radius: 2px;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -75%); }
+    .home-view-container .about-section .description-side {
+      height: 100%;
+      width: 50%;
+      background-color: #f0f0f0; }
+  .home-view-container .projects-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+    .home-view-container .projects-section .panel-side {
+      height: 100%;
+      width: 30%;
+      position: relative;
+      background-color: #f0f0f0; }
+      .home-view-container .projects-section .panel-side h2 {
+        position: absolute;
+        color: #464646;
+        font-size: 80px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+    .home-view-container .projects-section .display-side {
+      height: 100%;
+      width: 70%;
+      background-color: #647f6f; }
+  .home-view-container .contact-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+    .home-view-container .contact-section .contact-side {
+      height: 100%;
+      width: 50%;
+      position: relative;
+      background-color: #4d7777; }
+      .home-view-container .contact-section .contact-side h2 {
+        position: absolute;
+        color: #323232;
+        font-size: 80px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+    .home-view-container .contact-section .link-side {
+      height: 100%;
+      width: 50%;
+      background-color: #f0f0f0; }
+      .home-view-container .contact-section .link-side a {
+        text-decoration: none; }
+      .home-view-container .contact-section .link-side .contact-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        color: #464646; }
+        .home-view-container .contact-section .link-side .contact-info h2 {
+          font-family: "Roboto", sans-serif;
+          font-size: 40px; }
+        .home-view-container .contact-section .link-side .contact-info i {
+          cursor: pointer;
+          font-size: 30px;
+          color: #464646; }
+      .home-view-container .contact-section .link-side .icon-links i {
+        cursor: pointer;
+        font-size: 40px;
+        color: #464646; }
+  .home-view-container .bottom-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #3d3d3d; }
+
+.about-container {
+  background-color: orangered;
+  height: 100%;
+  width: 100%;
+  display: inline; }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+.carousel-outer-wrap {
+  height: 250px;
+  width: 1200px;
+  padding: 10px;
+  margin: 150px auto;
+  border-radius: 2px;
+  background-color: #323232;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .carousel-outer-wrap button {
+    height: 70px;
+    width: 20px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    background-color: rgba(100, 100, 100, 0.5); }
+    .carousel-outer-wrap button:hover {
+      background-color: rgba(100, 100, 100, 0.6); }
+    .carousel-outer-wrap button:active {
+      background-color: rgba(100, 100, 100, 0.4); }
+  .carousel-outer-wrap .image-container {
+    height: 200px;
+    width: 1100px;
+    overflow: hidden;
+    background-color: rgba(100, 100, 100, 0.5); }
+    .carousel-outer-wrap .image-container .image-wrapper {
+      height: 100%;
+      width: 100%;
+      margin-left: -5px;
+      border-radius: 1px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      transition-property: margin-left;
+      transition-duration: .8s; }
+      .carousel-outer-wrap .image-container .image-wrapper li {
+        height: 200px;
+        width: 300px;
+        margin: 0 5px;
+        border-radius: 1px;
+        flex-shrink: 0;
+        background-color: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .carousel-outer-wrap .image-container .image-wrapper li .specify-index {
+          height: 80px;
+          width: 80px;
+          border-radius: 2px;
+          background-color: rgba(0, 0, 0, 0.3);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 30px;
+          color: rgba(0, 0, 0, 0.2); }
+
+@import url("https://fonts.googleapis.com/css?family=VT323");
+.game-container {
+  height: 530px;
+  width: 500px;
+  margin: 50px auto; }
+  .game-container .score-container {
+    width: 130px;
+    margin: 0 auto 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .game-container .score-container p {
+      font-size: 28px;
+      color: #f0f0f0;
+      font-family: "VT323", monospace; }
+  .game-container .screen {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    background-color: #0a0a0a; }
+    .game-container .screen .little-dude {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: white; }
+    .game-container .screen .tail {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: white;
+      border: .25px solid;
+      border-color: #0a0a0a; }
+    .game-container .screen .fruit-box {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: transparent; }
+      .game-container .screen .fruit-box .fruit {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: purple; }
+    .game-container .screen .pause-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(40, 40, 40, 0.7);
+      height: 50px;
+      width: 130px; }
+      .game-container .screen .pause-div p {
+        font-family: "VT323", monospace;
+        font-size: 28px;
+        color: #f0f0f0; }
+    .game-container .screen .gameOver-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(40, 40, 40, 0.7);
+      height: 50px;
+      width: 180px; }
+      .game-container .screen .gameOver-div p {
+        font-family: "VT323", monospace;
+        font-size: 28px;
+        color: #f0f0f0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; }
+    .game-container .screen .newGame-div {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(40, 40, 40, 0.7);
+      height: 50px;
+      width: 250px; }
+      .game-container .screen .newGame-div p {
+        font-family: "VT323", monospace;
+        font-size: 28px;
+        color: #f0f0f0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; }
+      .game-container .screen .newGame-div:hover {
+        background-color: rgba(40, 40, 40, 0.9); }
+
+.pause-div.ng-hide-remove {
+  animation: .2s fadeIn; }
+
+.gameOver-div.ng-hide-remove {
+  animation: 0.8s bounceIn; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+    margin-left: -90px;
+    margin-top: -25px; }
+  5% {
+    opacity: 0;
+    transform: translateY(-100px); }
+  15% {
+    opacity: 1;
+    transform: translateY(0); }
+  30% {
+    transform: translateY(-40px); }
+  40% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-25px); }
+  60% {
+    transform: translateY(0); }
+  70% {
+    transform: translateY(-10px); }
+  80% {
+    transform: translateY(0); }
+  90% {
+    transform: translateY(-5px); }
+  100% {
+    transform: translateY(0);
+    margin-left: -90px;
+    margin-top: -25px; } }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+#home-nav-bar {
+  animation: nav-slide-down 1s linear forwards;
+  animation-delay: 3s;
+  height: 35px;
+  width: 350px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -50px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.nav-bar-container {
+  height: 30px;
+  width: 350px;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .nav-bar-container button {
+    height: 30px;
+    width: 70px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: #323232;
+    border: 0;
+    color: #c8c8c8;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .nav-bar-container button:hover {
+      background-color: rgba(75, 75, 75, 0.5); }
+    .nav-bar-container button:active {
+      background-color: rgba(50, 50, 50, 0.8); }
+
+@keyframes nav-slide-down {
+  from {
+    margin-top: -50px; }
+  to {
+    margin-top: 3px; } }
+
+.box {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%; }
+  .box .paul-svg {
+    stroke: white;
+    stroke-dasharray: 3500;
+    stroke-dashoffset: 3500;
+    animation: dash 2.3s linear forwards; }
+
+@keyframes dash {
+  90% {
+    fill: transparent; }
+  100% {
+    stroke-dashoffset: 0;
+    fill: white; } }
