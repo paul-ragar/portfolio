@@ -92,6 +92,45 @@ angular.module('portfolio').directive('carousel', function () {
   };
   // End of Directive
 });
+"use strict";
+
+angular.module('portfolio').directive("drawing", function () {
+  return {
+    restrict: "E",
+    templateUrl: './app/directives/drawing/drawing.html',
+    controller: function controller($scope) {
+
+      $scope.isDrawing = false;
+      $scope.drawingArr = [];
+      $scope.lineArr = [];
+      $scope.dot;
+
+      $scope.drawingArr.push($scope.lineArr);
+
+      $scope.startDraw = function () {
+        $scope.isDrawing = true;
+      };
+      $scope.stopDraw = function () {
+        $scope.isDrawing = false;
+        $scope.drawingArr.push($scope.lineArr);
+        console.log("drawingArr: ", $scope.drawingArr);
+      };
+      $scope.lineDraw = function () {
+        if ($scope.isDrawing) {
+          $scope.dot = {
+            x: event.offsetX,
+            y: event.offsetY
+          };
+          $scope.lineArr.push($scope.dot);
+        } else {
+          return false;
+        }
+      };
+
+      //END OF CONTROLLER
+    }
+  };
+});
 'use strict';
 
 angular.module('portfolio').directive('gameDir', function () {
@@ -238,10 +277,59 @@ angular.module('portfolio').directive('navBar', function () {
   return {
     restrict: 'E',
     templateUrl: './app/directives/nav-bar/nav-bar.html',
-    controller: function controller($scope, $state, mainService) {}
+    controller: function controller($scope, $state, mainService) {
 
-    // End of Controller
+      $scope.goAbout = function () {
+        document.querySelector('.about-section').scrollIntoView({
+          "scroll-behavior": "smooth"
+        });
+      };
+      $scope.goProjects = function () {
+        document.querySelector('.projects-section').scrollIntoView({
+          "behavior": "smooth"
+        });
+      };
+      $scope.goContact = function () {
+        document.querySelector('.contact-section').scrollIntoView({
+          "behavior": "smooth"
+        });
+      };
 
+      // $(function(){
+      //
+      //   $('a[href^="#"]').click(function(){
+      //
+      //     var target = $(this).attr('href');
+      //     var strip = target.slice(1);
+      //     var anchor = $("a[name='" + strip + "']")
+      //
+      //     // e.preventDefault();
+      //
+      //     $('html, body').animate({
+      //
+      //       scrollTop: anchor.offset().top
+      //
+      //     }, 'slow');
+      //
+      //   });
+      //
+      // });
+
+      $('a[href*="#"]:not([href="#"])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+
+      // End of Controller
+    }
     // End of return
   };
   // End of Directive

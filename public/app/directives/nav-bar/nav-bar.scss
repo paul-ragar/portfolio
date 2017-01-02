@@ -1,58 +1,46 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
 
-$font: 'Roboto', sans-serif;
+$ubu: 'Ubuntu Condensed', sans-serif;
 
-#home-nav-bar {
-  animation: nav-slide-down 1s linear forwards;
-  animation-delay: 3s;
-  height: 35px;
-  width: 350px;
-  // top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: -50px;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .nav-bar-container {
+  opacity: 0;
+  animation: nav-slide-up 1s ease-in;
+  animation-delay: 2s;
+  animation-fill-mode:forwards;
   height: 30px;
-  width: 350px;
-  margin: 5px auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  button {
-    height: 30px;
-    width: 70px;
-    margin-left: 2px;
-    margin-right: 2px;
-    background-color: rgba(50, 50, 50, 1);
-    border: 0;
-    color: rgba(200, 200, 200, 1);
-    font-family: $font;
-    font-size: 15px;
-    outline: none;
+  color: lightcoral;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  a {
+    text-decoration: none;
+    color: lightcoral;
+    font-size: 18px;
+    font-family: 'Ubuntu Condensed', sans-serif;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: color .7s;
     &:hover {
-      background-color: rgba(75, 75, 75, .5);
+      color: white;
     }
-    &:active {
-      background-color: rgba(50, 50, 50, .8);
-
-    }
+  }
+  p {
+    font-size: 26px;
+    margin: 0 8px;
+    margin-top: 2px;
   }
 }
 
-@keyframes nav-slide-down {
+@keyframes nav-slide-up {
   from {
-    margin-top: -50px;
+    bottom: 15px;
+    opacity: 0;
   }
   to {
-    margin-top: 3px;
+    bottom: 30px;
+    opacity: 1;
   }
 }

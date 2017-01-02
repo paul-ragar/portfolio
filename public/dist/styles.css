@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:500,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Condensed");
 .home-view-container {
   display: flex;
   flex-direction: column; }
@@ -6,6 +6,23 @@
     width: 100%;
     height: 100vh;
     background-color: #3d3d3d; }
+    .home-view-container .svg-section .title {
+      opacity: 0;
+      animation: title-slide-down 1s ease-in;
+      animation-delay: 2s;
+      animation-fill-mode: forwards;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f08080;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%); }
+      .home-view-container .svg-section .title h2 {
+        font-size: 23px;
+        font-family: 'Ubuntu Condensed', sans-serif;
+        letter-spacing: 1px; }
   .home-view-container .about-section {
     width: 100%;
     height: 100vh;
@@ -16,30 +33,35 @@
     .home-view-container .about-section .info-side {
       height: 100%;
       width: 50%;
-      background-color: #bc6049;
+      background-color: #729daa;
       position: relative; }
       .home-view-container .about-section .info-side h2 {
         position: absolute;
         color: #f0f0f0;
         font-size: 80px;
-        font-family: "Roboto", sans-serif;
+        font-family: "Ubuntu Condensed", sans-serif;
         font-weight: 500;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
-    .home-view-container .about-section img {
-      height: 150px;
-      background-position: center;
-      position: absolute;
-      border-radius: 2px;
-      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-      top: 25%;
-      left: 50%;
-      transform: translate(-50%, -75%); }
     .home-view-container .about-section .description-side {
       height: 100%;
       width: 50%;
-      background-color: #f0f0f0; }
+      background-color: #f0f0f0;
+      position: relative; }
+      .home-view-container .about-section .description-side img {
+        height: 175px;
+        background-position: center;
+        position: absolute;
+        border-radius: 3px;
+        filter: grayscale(0.2);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        top: 28px;
+        right: 28px; }
+      .home-view-container .about-section .description-side p {
+        font-family: "Ubuntu Condensed", sans-serif;
+        letter-spacing: 1px;
+        white-space: normal; }
   .home-view-container .projects-section {
     width: 100%;
     height: 100vh;
@@ -54,8 +76,8 @@
       .home-view-container .projects-section .panel-side h2 {
         position: absolute;
         color: #464646;
-        font-size: 80px;
-        font-family: "Roboto", sans-serif;
+        font-size: 50px;
+        font-family: "Ubuntu Condensed", sans-serif;
         font-weight: 500;
         top: 50%;
         left: 50%;
@@ -63,7 +85,7 @@
     .home-view-container .projects-section .display-side {
       height: 100%;
       width: 70%;
-      background-color: #647f6f; }
+      background-color: #aab7ad; }
   .home-view-container .contact-section {
     width: 100%;
     height: 100vh;
@@ -74,12 +96,12 @@
       height: 100%;
       width: 50%;
       position: relative;
-      background-color: #4d7777; }
+      background-color: #a1a0a5; }
       .home-view-container .contact-section .contact-side h2 {
         position: absolute;
-        color: #323232;
+        color: white;
         font-size: 80px;
-        font-family: "Roboto", sans-serif;
+        font-family: "Ubuntu Condensed", sans-serif;
         font-weight: 500;
         top: 50%;
         left: 50%;
@@ -87,32 +109,58 @@
     .home-view-container .contact-section .link-side {
       height: 100%;
       width: 50%;
-      background-color: #f0f0f0; }
+      background-color: #f0f0f0;
+      padding: 20px; }
       .home-view-container .contact-section .link-side a {
         text-decoration: none; }
+      .home-view-container .contact-section .link-side p {
+        font-family: "Ubuntu Condensed", sans-serif;
+        font-size: 18px; }
       .home-view-container .contact-section .link-side .contact-info {
+        width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: nowrap;
         color: #464646; }
+        .home-view-container .contact-section .link-side .contact-info p {
+          text-align: center; }
         .home-view-container .contact-section .link-side .contact-info h2 {
-          font-family: "Roboto", sans-serif;
-          font-size: 40px; }
-        .home-view-container .contact-section .link-side .contact-info i {
-          cursor: pointer;
-          font-size: 30px;
-          color: #464646; }
-      .home-view-container .contact-section .link-side .icon-links i {
-        cursor: pointer;
-        font-size: 40px;
+          font-family: "Ubuntu Condensed", sans-serif;
+          font-size: 40px;
+          text-align: center; }
+      .home-view-container .contact-section .link-side .social-wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
         color: #464646; }
+        .home-view-container .contact-section .link-side .social-wrap p {
+          text-align: center; }
+        .home-view-container .contact-section .link-side .social-wrap .icon-links {
+          width: 30%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between; }
+          .home-view-container .contact-section .link-side .social-wrap .icon-links i {
+            cursor: pointer;
+            font-size: 40px;
+            color: #464646; }
   .home-view-container .bottom-section {
     width: 100%;
     height: 100vh;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
     background-color: #3d3d3d; }
+
+@keyframes title-slide-down {
+  from {
+    top: 15px;
+    opacity: 0; }
+  to {
+    top: 30px;
+    opacity: 1; } }
 
 .about-container {
   background-color: orangered;
@@ -181,6 +229,20 @@
           font-family: "Roboto", sans-serif;
           font-size: 30px;
           color: rgba(0, 0, 0, 0.2); }
+
+.canvas-app {
+  height: 100vh;
+  width: 100vw;
+  background-color: inherit;
+  cursor: crosshair;
+  position: relative; }
+  .canvas-app .line-drawing .dot-drawing {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: white;
+    user-select: none;
+    position: absolute; }
 
 @import url("https://fonts.googleapis.com/css?family=VT323");
 .game-container {
@@ -322,56 +384,47 @@
     margin-left: -90px;
     margin-top: -25px; } }
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
-#home-nav-bar {
-  animation: nav-slide-down 1s linear forwards;
-  animation-delay: 3s;
-  height: 35px;
-  width: 350px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: -50px;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Condensed");
 .nav-bar-container {
+  opacity: 0;
+  animation: nav-slide-up 1s ease-in;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
   height: 30px;
-  width: 350px;
-  margin: 5px auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center; }
-  .nav-bar-container button {
-    height: 30px;
-    width: 70px;
-    margin-left: 2px;
-    margin-right: 2px;
-    background-color: #323232;
-    border: 0;
-    color: #c8c8c8;
-    font-family: "Roboto", sans-serif;
-    font-size: 15px;
-    outline: none;
+  justify-content: center;
+  align-items: center;
+  color: lightcoral;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%); }
+  .nav-bar-container a {
+    text-decoration: none;
+    color: lightcoral;
+    font-size: 18px;
+    font-family: 'Ubuntu Condensed', sans-serif;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .nav-bar-container button:hover {
-      background-color: rgba(75, 75, 75, 0.5); }
-    .nav-bar-container button:active {
-      background-color: rgba(50, 50, 50, 0.8); }
+    transition: color .7s; }
+    .nav-bar-container a:hover {
+      color: white; }
+  .nav-bar-container p {
+    font-size: 26px;
+    margin: 0 8px;
+    margin-top: 2px; }
 
-@keyframes nav-slide-down {
+@keyframes nav-slide-up {
   from {
-    margin-top: -50px; }
+    bottom: 15px;
+    opacity: 0; }
   to {
-    margin-top: 3px; } }
+    bottom: 30px;
+    opacity: 1; } }
 
 .box {
-  height: 300px;
-  width: 300px;
+  height: 450px;
+  width: 450px;
+  margin-left: 15px;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;

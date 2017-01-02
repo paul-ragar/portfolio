@@ -1,6 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:500,400,500,700');
+// @import url('https://fonts.googleapis.com/css?family=Roboto:500,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
 
-$roboto: 'Roboto', sans-serif;
+
+$ubu: 'Ubuntu Condensed', sans-serif;
+$about: #729daa;
+$projects: #aab7ad;
+$contact: rgb(161, 160, 165);
+// $roboto: 'Roboto', sans-serif;
+
+// rgb(114, 157, 170)
+// rgb(100, 127, 111)
+// rgb(77, 119, 119)
 
 .home-view-container {
   display: flex;
@@ -9,6 +19,26 @@ $roboto: 'Roboto', sans-serif;
     width: 100%;
     height: 100vh;
     background-color: rgb(61, 61, 61);
+    .title {
+      opacity: 0;
+      animation: title-slide-down 1s ease-in;
+      animation-delay: 2s;
+      animation-fill-mode:forwards;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f08080;
+      position: absolute;
+      left: 50%;
+      // bottom: 50px;
+      transform: translateX(-50%);
+      h2 {
+        font-size: 23px;
+        font-family: 'Ubuntu Condensed', sans-serif;
+        letter-spacing: 1px;
+      }
+    }
   }
   .about-section{
     width: 100%;
@@ -20,33 +50,40 @@ $roboto: 'Roboto', sans-serif;
     .info-side {
       height: 100%;
       width: 50%;
-      background-color: rgb(188, 96, 73);
+      background-color: $about;
       position: relative;
       h2 {
         position: absolute;
         color: rgb(240, 240, 240);
         font-size: 80px;
-        font-family: $roboto;
+        font-family: $ubu;
         font-weight: 500;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
-    }
-    img {
-      height: 150px;
-      background-position: center;
-      position: absolute;
-      border-radius: 2px;
-      box-shadow: 5px 5px 20px rgba(0, 0, 0, .3);
-      top: 25%;
-      left: 50%;
-      transform: translate(-50%, -75%);
+
     }
     .description-side {
       height: 100%;
       width: 50%;
       background-color: rgb(240, 240, 240);
+      position: relative;
+      img {
+        height: 175px;
+        background-position: center;
+        position: absolute;
+        border-radius: 3px;
+        filter: grayscale(.2);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+        top: 28px;
+        right: 28px;
+      }
+      p {
+        font-family: $ubu;
+        letter-spacing: 1px;
+        white-space: normal;
+      }
     }
   }
   .projects-section {
@@ -63,8 +100,8 @@ $roboto: 'Roboto', sans-serif;
       h2 {
         position: absolute;
         color: rgb(70,70,70);
-        font-size: 80px;
-        font-family: $roboto;
+        font-size: 50px;
+        font-family: $ubu;
         font-weight: 500;
         top: 50%;
         left: 50%;
@@ -74,7 +111,7 @@ $roboto: 'Roboto', sans-serif;
     .display-side {
       height: 100%;
       width: 70%;
-      background-color: rgb(100, 127, 111);
+      background-color: $projects;
     }
   }
   .contact-section {
@@ -87,12 +124,12 @@ $roboto: 'Roboto', sans-serif;
       height: 100%;
       width: 50%;
       position: relative;
-      background-color: rgb(77, 119, 119);
+      background-color: $contact;
       h2 {
         position: absolute;
-        color: rgb(50,50,50);
+        color: white;
         font-size: 80px;
-        font-family: $roboto;
+        font-family: $ubu;
         font-weight: 500;
         top: 50%;
         left: 50%;
@@ -103,30 +140,53 @@ $roboto: 'Roboto', sans-serif;
       height: 100%;
       width: 50%;
       background-color: rgb(240, 240, 240);
+      padding: 20px;
       a {
         text-decoration: none;
       }
+      p {
+        font-family: $ubu;
+        font-size: 18px;
+      }
       .contact-info {
+        width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: nowrap;
         color: rgb(70, 70, 70);
+        p {
+          text-align: center;
+        }
         h2 {
-          font-family: $roboto;
+          font-family: $ubu;
           font-size: 40px;
-
+          text-align: center;
         }
-        i {
-          cursor: pointer;
-          font-size: 30px;
-          color: rgb(70, 70, 70);
-        }
+        // i {
+        //   cursor: pointer;
+        //   font-size: 30px;
+        //   color: rgb(70, 70, 70);
+        // }
       }
-      .icon-links {
-        i {
-          cursor: pointer;
-          font-size: 40px;
-          color: rgb(70, 70, 70);
+      .social-wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        color: rgb(70, 70, 70);
+        p {
+          text-align: center;
+        }
+        .icon-links {
+          width: 30%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          i {
+            cursor: pointer;
+            font-size: 40px;
+            color: rgb(70, 70, 70);
+          }
         }
       }
     }
@@ -135,8 +195,24 @@ $roboto: 'Roboto', sans-serif;
     width: 100%;
     height: 100vh;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(61, 61, 61);
+
+  }
+}
+
+
+
+//ANIMATIONS
+@keyframes title-slide-down {
+  from {
+    top: 15px;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
   }
 }
