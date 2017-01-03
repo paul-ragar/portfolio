@@ -11,7 +11,14 @@ angular.module('portfolio')
       $scope.dot;
 
       $scope.drawingArr.push($scope.lineArr);
-      
+
+      $scope.singleClick = () => {
+        $scope.dot = {
+          x: event.offsetX,
+          y: event.offsetY
+        };
+        $scope.lineArr.push($scope.dot);
+      }
       $scope.startDraw = () => {
         $scope.isDrawing = true;
       }
@@ -31,10 +38,6 @@ angular.module('portfolio')
           return false;
         }
       }
-
-
-
-
 
 
 

@@ -1,7 +1,7 @@
-<div class="canvas-app" ng-mousedown="startDraw()" ng-mousemove="lineDraw($event)" ng-mouseup="stopDraw()">
+<div class="canvas-app" ng-click="singleClick()"ng-mousedown="startDraw()" ng-mousemove="lineDraw($event)" ng-mouseup="stopDraw()">
   <div class="line-drawing" ng-repeat="line in drawingArr track by $index">
     <div class="dot-drawing" ng-style="{left: (dot.x + 'px'), top: (dot.y + 'px'), content: dot.z}" ng-repeat="dot in line track by $index">
-      
+
     </div>
   </div>
 </div>

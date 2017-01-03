@@ -1,12 +1,14 @@
-// @import url('https://fonts.googleapis.com/css?family=Roboto:500,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:500,400,500,700');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Kalam:300,400');
 
 
 $ubu: 'Ubuntu Condensed', sans-serif;
 $about: #729daa;
 $projects: #aab7ad;
 $contact: rgb(161, 160, 165);
-// $roboto: 'Roboto', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$kalam: 'Kalam', cursive;
 
 // rgb(114, 157, 170)
 // rgb(100, 127, 111)
@@ -40,6 +42,9 @@ $contact: rgb(161, 160, 165);
       }
     }
   }
+
+
+
   .about-section{
     width: 100%;
     height: 100vh;
@@ -69,6 +74,7 @@ $contact: rgb(161, 160, 165);
       width: 50%;
       background-color: rgb(240, 240, 240);
       position: relative;
+      padding: 20px;
       img {
         height: 175px;
         background-position: center;
@@ -80,12 +86,19 @@ $contact: rgb(161, 160, 165);
         right: 28px;
       }
       p {
-        font-family: $ubu;
+        font-family: $roboto;
         letter-spacing: 1px;
         white-space: normal;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 200px;
+        color: rgb(61, 61, 61);
       }
     }
   }
+
+
+
   .projects-section {
     width: 100%;
     height: 100vh;
@@ -97,6 +110,8 @@ $contact: rgb(161, 160, 165);
       width: 30%;
       position: relative;
       background-color: rgb(240, 240, 240);
+      // background-color: $projects;
+
       h2 {
         position: absolute;
         color: rgb(70,70,70);
@@ -112,8 +127,43 @@ $contact: rgb(161, 160, 165);
       height: 100%;
       width: 70%;
       background-color: $projects;
+      // background-color: rgb(240, 240, 240);
+
+      position: relative;
+      .images-container {
+        height: 100%;
+        position: absolute;
+        padding: 20px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .image {
+          height: 290px;
+          width: 275px;
+          margin: 0 5px;
+          cursor: pointer;
+          background-color: white;
+          box-shadow: 5px 5px 10px rgba(0,0,0,.4);
+          overflow: hidden;
+          position: relative;
+          .moving-img {
+            animation: living-imgs 40s infinite;
+            height: 100%;
+            position: absolute;
+            transition: filter .6s;
+            &:hover {
+              filter: opacity(.2);
+            }
+          }
+        }
+      }
     }
   }
+
+
+
   .contact-section {
     width: 100%;
     height: 100vh;
@@ -141,65 +191,125 @@ $contact: rgb(161, 160, 165);
       width: 50%;
       background-color: rgb(240, 240, 240);
       padding: 20px;
-      a {
-        text-decoration: none;
-      }
-      p {
-        font-family: $ubu;
-        font-size: 18px;
-      }
-      .contact-info {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        color: rgb(70, 70, 70);
-        p {
-          text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .contact-wrapper {
+        a {
+          text-decoration: none;
         }
-        h2 {
+        p {
           font-family: $ubu;
-          font-size: 40px;
-          text-align: center;
+          font-size: 25px;
+          margin: 15px 0;
         }
-        // i {
-        //   cursor: pointer;
-        //   font-size: 30px;
-        //   color: rgb(70, 70, 70);
-        // }
-      }
-      .social-wrap {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        color: rgb(70, 70, 70);
-        p {
-          text-align: center;
-        }
-        .icon-links {
-          width: 30%;
-          margin: 0 auto;
+        .contact-info {
+          width: 100%;
           display: flex;
-          justify-content: space-between;
-          i {
-            cursor: pointer;
-            font-size: 40px;
-            color: rgb(70, 70, 70);
+          flex-direction: column;
+          flex-wrap: nowrap;
+          color: rgb(70, 70, 70);
+          p {
+            text-align: center;
+          }
+          .email-copy-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            textarea {
+              height: 65px;
+              width: 350px;
+              align-self: center;
+              border: none;
+              overflow: hidden;
+              background-color: transparent;
+              resize: none;
+              color: rgb(70, 70, 70);
+              outline: none;
+              box-shadow: none;
+              font-family: $ubu;
+              font-size: 40px;
+              text-align: center;
+              margin-bottom: 15px;
+            }
+            .copy-btn {
+              width: 75px;
+              position: absolute;
+              background-color: rgb(16, 129, 222);
+              outline: none;
+              color: white;
+              cursor: pointer;
+              font-family: $roboto;
+              border: none;
+              border-radius: 2px;
+              top: 21px;
+              right: -28px;
+              transition: filter .3s;
+              &:hover {
+                filter: opacity(.8);
+              }
+              &:active {
+                background-color: rgb(0, 98, 178);
+              }
+            }
+            i {
+              position: absolute;
+              color: rgb(0, 176, 80);
+              display: none;
+              top: 22px;
+              right: -49px;
+            }
+          }
+        }
+        .social-wrap {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          color: rgb(70, 70, 70);
+          p {
+            text-align: center;
+          }
+          .icon-links {
+            width: 30%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            i {
+              cursor: pointer;
+              font-size: 40px;
+              color: rgb(70, 70, 70);
+              &:hover {
+                opacity: .7;
+              }
+            }
           }
         }
       }
     }
   }
+
+
+
   .bottom-section {
     width: 100%;
     height: 100vh;
     display: flex;
     overflow: hidden;
+    position: relative;
     justify-content: center;
     align-items: center;
     background-color: rgb(61, 61, 61);
-
+    h2 {
+      font-family: $kalam;
+      font-size: 30px;
+      color: white;
+      position: absolute;
+      top: 20px;
+      left: 15px;
+    }
   }
 }
 
@@ -214,5 +324,28 @@ $contact: rgb(161, 160, 165);
   to {
     top: 30px;
     opacity: 1;
+  }
+}
+
+    // @for $i from 1 through 6 {
+    //   &:nth-child(#{$i}) {
+    //     animation: {
+    //       name: living-imgs;
+    //       duration: 20s;
+    //       delay: (1s * $i);
+    //       timing-function: infinite;
+    //     }
+    //   }
+    // }
+
+@keyframes living-imgs {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -250px;
+  }
+  100% {
+    left: 0;
   }
 }

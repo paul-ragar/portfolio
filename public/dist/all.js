@@ -22,25 +22,29 @@ angular.module('portfolio', ['ui.router', 'ngAnimate']).config(function ($stateP
 });
 'use strict';
 
-angular.module('portfolio').controller('mainCtrl', function ($scope, mainService) {});
+angular.module('portfolio').controller('mainCtrl', function ($scope, mainService) {
+
+  var copyTextareaBtn = document.querySelector('.copy-btn');
+
+  $scope.copyText = function () {
+    var copyTextarea = document.querySelector('.email-copy-text');
+    copyTextarea.select();
+
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Copying text command was ' + msg);
+      $scope.greenCheck = {
+        "display": "flex"
+      };
+    } catch (err) {
+      console.log('Oops, unable to copy');
+    }
+  };
+});
 'use strict';
 
 angular.module('portfolio').service('mainService', function ($http, $state) {});
-'use strict';
-
-angular.module('portfolio').directive('aboutDir', function () {
-
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/about/about.html',
-    controller: function controller($scope, $state, mainService) {}
-
-    // End of Controller
-
-    // End of return
-  };
-  // End of Directive
-});
 'use strict';
 
 angular.module('portfolio').directive('carousel', function () {
@@ -92,6 +96,21 @@ angular.module('portfolio').directive('carousel', function () {
   };
   // End of Directive
 });
+'use strict';
+
+angular.module('portfolio').directive('aboutDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/about/about.html',
+    controller: function controller($scope, $state, mainService) {}
+
+    // End of Controller
+
+    // End of return
+  };
+  // End of Directive
+});
 "use strict";
 
 angular.module('portfolio').directive("drawing", function () {
@@ -107,6 +126,13 @@ angular.module('portfolio').directive("drawing", function () {
 
       $scope.drawingArr.push($scope.lineArr);
 
+      $scope.singleClick = function () {
+        $scope.dot = {
+          x: event.offsetX,
+          y: event.offsetY
+        };
+        $scope.lineArr.push($scope.dot);
+      };
       $scope.startDraw = function () {
         $scope.isDrawing = true;
       };

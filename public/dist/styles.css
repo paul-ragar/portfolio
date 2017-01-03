@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:500,400,500,700");
 @import url("https://fonts.googleapis.com/css?family=Ubuntu+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Kalam:300,400");
 .home-view-container {
   display: flex;
   flex-direction: column; }
@@ -48,7 +50,8 @@
       height: 100%;
       width: 50%;
       background-color: #f0f0f0;
-      position: relative; }
+      position: relative;
+      padding: 20px; }
       .home-view-container .about-section .description-side img {
         height: 175px;
         background-position: center;
@@ -59,9 +62,13 @@
         top: 28px;
         right: 28px; }
       .home-view-container .about-section .description-side p {
-        font-family: "Ubuntu Condensed", sans-serif;
+        font-family: "Roboto", sans-serif;
         letter-spacing: 1px;
-        white-space: normal; }
+        white-space: normal;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 200px;
+        color: #3d3d3d; }
   .home-view-container .projects-section {
     width: 100%;
     height: 100vh;
@@ -85,7 +92,33 @@
     .home-view-container .projects-section .display-side {
       height: 100%;
       width: 70%;
-      background-color: #aab7ad; }
+      background-color: #aab7ad;
+      position: relative; }
+      .home-view-container .projects-section .display-side .images-container {
+        height: 100%;
+        position: absolute;
+        padding: 20px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap; }
+        .home-view-container .projects-section .display-side .images-container .image {
+          height: 290px;
+          width: 275px;
+          margin: 0 5px;
+          cursor: pointer;
+          background-color: white;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+          overflow: hidden;
+          position: relative; }
+          .home-view-container .projects-section .display-side .images-container .image .moving-img {
+            animation: living-imgs 40s infinite;
+            height: 100%;
+            position: absolute;
+            transition: filter .6s; }
+            .home-view-container .projects-section .display-side .images-container .image .moving-img:hover {
+              filter: opacity(0.2); }
   .home-view-container .contact-section {
     width: 100%;
     height: 100vh;
@@ -110,49 +143,102 @@
       height: 100%;
       width: 50%;
       background-color: #f0f0f0;
-      padding: 20px; }
-      .home-view-container .contact-section .link-side a {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .home-view-container .contact-section .link-side .contact-wrapper a {
         text-decoration: none; }
-      .home-view-container .contact-section .link-side p {
+      .home-view-container .contact-section .link-side .contact-wrapper p {
         font-family: "Ubuntu Condensed", sans-serif;
-        font-size: 18px; }
-      .home-view-container .contact-section .link-side .contact-info {
+        font-size: 25px;
+        margin: 15px 0; }
+      .home-view-container .contact-section .link-side .contact-wrapper .contact-info {
         width: 100%;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         color: #464646; }
-        .home-view-container .contact-section .link-side .contact-info p {
+        .home-view-container .contact-section .link-side .contact-wrapper .contact-info p {
           text-align: center; }
-        .home-view-container .contact-section .link-side .contact-info h2 {
-          font-family: "Ubuntu Condensed", sans-serif;
-          font-size: 40px;
-          text-align: center; }
-      .home-view-container .contact-section .link-side .social-wrap {
+        .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative; }
+          .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box textarea {
+            height: 65px;
+            width: 350px;
+            align-self: center;
+            border: none;
+            overflow: hidden;
+            background-color: transparent;
+            resize: none;
+            color: #464646;
+            outline: none;
+            box-shadow: none;
+            font-family: "Ubuntu Condensed", sans-serif;
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 15px; }
+          .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box .copy-btn {
+            width: 75px;
+            position: absolute;
+            background-color: #1081de;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            font-family: "Roboto", sans-serif;
+            border: none;
+            border-radius: 2px;
+            top: 21px;
+            right: -28px;
+            transition: filter .3s; }
+            .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box .copy-btn:hover {
+              filter: opacity(0.8); }
+            .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box .copy-btn:active {
+              background-color: #0062b2; }
+          .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box i {
+            position: absolute;
+            color: #00b050;
+            display: none;
+            top: 22px;
+            right: -49px; }
+      .home-view-container .contact-section .link-side .contact-wrapper .social-wrap {
         width: 100%;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         color: #464646; }
-        .home-view-container .contact-section .link-side .social-wrap p {
+        .home-view-container .contact-section .link-side .contact-wrapper .social-wrap p {
           text-align: center; }
-        .home-view-container .contact-section .link-side .social-wrap .icon-links {
+        .home-view-container .contact-section .link-side .contact-wrapper .social-wrap .icon-links {
           width: 30%;
           margin: 0 auto;
           display: flex;
           justify-content: space-between; }
-          .home-view-container .contact-section .link-side .social-wrap .icon-links i {
+          .home-view-container .contact-section .link-side .contact-wrapper .social-wrap .icon-links i {
             cursor: pointer;
             font-size: 40px;
             color: #464646; }
+            .home-view-container .contact-section .link-side .contact-wrapper .social-wrap .icon-links i:hover {
+              opacity: .7; }
   .home-view-container .bottom-section {
     width: 100%;
     height: 100vh;
     display: flex;
     overflow: hidden;
+    position: relative;
     justify-content: center;
     align-items: center;
     background-color: #3d3d3d; }
+    .home-view-container .bottom-section h2 {
+      font-family: "Kalam", cursive;
+      font-size: 30px;
+      color: white;
+      position: absolute;
+      top: 20px;
+      left: 15px; }
 
 @keyframes title-slide-down {
   from {
@@ -162,11 +248,13 @@
     top: 30px;
     opacity: 1; } }
 
-.about-container {
-  background-color: orangered;
-  height: 100%;
-  width: 100%;
-  display: inline; }
+@keyframes living-imgs {
+  0% {
+    left: 0; }
+  50% {
+    left: -250px; }
+  100% {
+    left: 0; } }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 .carousel-outer-wrap {
@@ -230,6 +318,12 @@
           font-size: 30px;
           color: rgba(0, 0, 0, 0.2); }
 
+.about-container {
+  background-color: orangered;
+  height: 100%;
+  width: 100%;
+  display: inline; }
+
 .canvas-app {
   height: 100vh;
   width: 100vw;
@@ -245,6 +339,9 @@
     position: absolute; }
 
 @import url("https://fonts.googleapis.com/css?family=VT323");
+body {
+  background-color: #282828; }
+
 .game-container {
   height: 530px;
   width: 500px;

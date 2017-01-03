@@ -1,4 +1,5 @@
 <div class="home-view-container">
+
   <div class="svg-section">
     <div class="title">
       <h2>MY NAME IS PAUL AND I'M A FULL-STACK WEB DEVELOPER</h2>
@@ -6,58 +7,83 @@
     <svg-dir></svg-dir>
     <nav-bar></nav-bar>
   </div>
+
   <div class="about-section">
     <div class="info-side">
       <a name="aboutanchor"></a>
       <h2>ABOUT</h2>
-      <nav-bar></nav-bar>
     </div>
     <div class="description-side">
       <img src="https://dl.dropboxusercontent.com/s/605n1y2u1roohka/Screen%20Shot%202016-12-16%20at%208.29.34%20PM.png?dl=0" />
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        All growing up I was surrounded with creativity. My dad, and his dad were both in the creative ad industry. I aspired to be just like them. Later on I found myself in college pursuing a degree in accounting. I figured it would be a safe choice considering that all businesses need accountants, and I would always be employed. During my schooling I enrolled in an advanced accounting class that explored Excel Visual Basic for Applications. It was the first sip of code that I had ever tasted, and I was hooked. I began teaching myself with every free tutorial I could find online. I then shifted my education towards web developing and have been creating ever since. Now I am proud to say that I can build full stack applications using multiple languages.
       </p>
     </div>
   </div>
+
   <div class="projects-section">
     <div class="panel-side">
       <a name="projectsanchor"></a>
       <h2>PROJECTS</h2>
-      <nav-bar></nav-bar>
     </div>
     <div class="display-side">
-
+      <div class="images-container">
+        <div class="image">
+          <img class="moving-img" src="https://dl.dropboxusercontent.com/s/xv364dh1osj5vzm/Screen%20Shot%202017-01-02%20at%206.44.18%20PM.png?dl=0" alt="" />
+        </div>
+        <div class="image">
+          <img class="moving-img" src="https://dl.dropboxusercontent.com/s/p9byf7goeje3kfl/Screen%20Shot%202017-01-02%20at%207.53.47%20PM.png?dl=0" alt="" />
+        </div>
+        <div class="image">
+          <img class="moving-img" src="https://dl.dropboxusercontent.com/s/x65uvwal6x8u1rt/Screen%20Shot%202017-01-02%20at%207.46.45%20PM.png?dl=0" alt="" />
+        </div>
+        <div class="image">
+          <img class="moving-img" src="https://dl.dropboxusercontent.com/s/rjecm1j9gfqgv5t/Screen%20Shot%202017-01-02%20at%207.04.30%20PM.png?dl=0" alt="" />
+        </div>
+        <div class="image">
+          <img class="moving-img" src="https://dl.dropboxusercontent.com/s/mejb937qyjgibii/Screen%20Shot%202017-01-02%20at%207.37.53%20PM.png?dl=0" alt="" />
+        </div>
+        <div class="image" ui-sref="game">
+          <img class="moving-img" src="https://dl.dropboxusercontent.com/s/194n7tug9gk8cbl/Screen%20Shot%202017-01-02%20at%2010.22.56%20PM.png?dl=0" alt="" />
+        </div>
+      </div>
     </div>
   </div>
+
   <div class="contact-section">
     <div class="contact-side">
       <a name="contactanchor"></a>
       <h2>CONTACT</h2>
-      <nav-bar></nav-bar>
     </div>
     <div class="link-side">
-      <div class="contact-info">
-        <p>Feel free to reach out to me with email below</p>
-        <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-        <h2>paul.ragar@gmail.com</h2>
-      </div>
-      <div class="social-wrap">
-        <p>Don't forget to check out my Github and Linkedin</p>
-        <div class="icon-links">
-          <a href="https://github.com/paul-ragar">
-            <i class="fa fa-github"  aria-hidden="true"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/paul-ragar">
-            <i class="fa fa-linkedin"  aria-hidden="true"></i>
-          </a>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <p>Feel free to reach out to me with email below</p>
+          <div class="email-copy-box">
+            <textarea class="email-copy-text">paul.ragar@gmail.com</textarea>
+            <button class="copy-btn" type="button" name="button" ng-click="copyText()">Copy Email</button>
+            <i ng-style="greenCheck" class="fa fa-check-square-o" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="social-wrap">
+          <p>Don't forget to check out my Github and Linkedin</p>
+          <div class="icon-links">
+            <a href="https://github.com/paul-ragar">
+              <i class="fa fa-github"  aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/paul-ragar">
+              <i class="fa fa-linkedin"  aria-hidden="true"></i>
+            </a>
 
+          </div>
         </div>
       </div>
-
     </div>
   </div>
+
   <div class="bottom-section">
+    <h2>Connect the dots...</h2>
     <drawing></drawing>
   </div>
+
 </div>
