@@ -75,24 +75,64 @@ $kalam: 'Kalam', cursive;
       background-color: rgb(240, 240, 240);
       position: relative;
       padding: 20px;
-      img {
+      .profile-pic {
         height: 175px;
         background-position: center;
-        position: absolute;
-        border-radius: 3px;
+        float: right;
+        border-radius: 50%;
         filter: grayscale(.2);
         box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
-        top: 28px;
-        right: 28px;
+      }
+      h2 {
+        font-family: $roboto;
+        font-size: 22px;
+        font-weight: 500;
+        margin: 10px 0 5px 0;
       }
       p {
         font-family: $roboto;
         letter-spacing: 1px;
-        white-space: normal;
-        font-size: 18px;
+        white-space: pre-wrap;
+        font-size: 17px;
         line-height: 1.5;
-        margin-top: 200px;
+        // margin-top: 200px;
         color: rgb(61, 61, 61);
+      }
+      h3 {
+        font-family: $roboto;
+        font-size: 22px;
+        font-weight: 500;
+        margin: 25px 0 5px 0;
+      }
+      .skill-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        // position: relative;
+        .skill-box {
+          position: relative;
+          img {
+            height: 60px;
+            width: 60px;
+            margin: 15px 10px 5px 10px;
+            filter: grayscale(.7);
+            transition: filter .5s;
+            &:hover {
+              filter: none;
+            }
+          }
+          h1 {
+            font-family: $roboto;
+            font-size: 13px;
+            font-weight: 700;
+            position: absolute;
+            margin-top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+
+          }
+        }
       }
     }
   }
@@ -132,6 +172,7 @@ $kalam: 'Kalam', cursive;
       position: relative;
       .images-container {
         height: 100%;
+        width: 100%;
         position: absolute;
         padding: 20px 20px;
         display: flex;
@@ -139,22 +180,34 @@ $kalam: 'Kalam', cursive;
         align-items: center;
         flex-direction: row;
         flex-wrap: wrap;
-        .image {
-          height: 290px;
-          width: 275px;
-          margin: 0 5px;
-          cursor: pointer;
-          background-color: white;
-          box-shadow: 5px 5px 10px rgba(0,0,0,.4);
-          overflow: hidden;
-          position: relative;
-          .moving-img {
-            animation: living-imgs 40s infinite;
-            height: 100%;
-            position: absolute;
-            transition: filter .6s;
-            &:hover {
-              filter: opacity(.2);
+        a {
+          width: 33%;
+          .image {
+            height: 290px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: white;
+            box-shadow: 5px 5px 10px rgba(0,0,0,.4);
+            overflow: hidden;
+            position: relative;
+            h1 {
+              top: 10px;
+              left: 10px;
+              text-decoration: none;
+              position: absolute;
+              font-family: $roboto;
+              font-size: 28px;
+              color: black;
+              font-weight: 700;
+            }
+            .moving-img {
+              animation: living-imgs 40s infinite;
+              height: 100%;
+              position: absolute;
+              transition: filter .6s;
+              &:hover {
+                filter: opacity(.2);
+              }
             }
           }
         }
@@ -267,6 +320,7 @@ $kalam: 'Kalam', cursive;
           width: 100%;
           display: flex;
           flex-direction: column;
+          margin-top: 60px;
           flex-wrap: nowrap;
           color: rgb(70, 70, 70);
           p {

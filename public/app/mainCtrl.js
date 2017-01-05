@@ -20,7 +20,8 @@ angular.module('portfolio')
     }
   }
 
-
+  $scope.skills = mainService.skills;
+  $scope.projects = mainService.projects;
 
 
 
