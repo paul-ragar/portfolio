@@ -5,8 +5,10 @@
 
 $ubu: 'Ubuntu Condensed', sans-serif;
 $about: #729daa;
-$projects: #aab7ad;
-$contact: rgb(161, 160, 165);
+// $projects: #aab7ad;
+// $contact: rgb(161, 160, 165);
+$projects: rgb(161, 160, 165);
+$contact: #aab7ad;
 $roboto: 'Roboto', sans-serif;
 $kalam: 'Kalam', cursive;
 
@@ -60,8 +62,8 @@ $kalam: 'Kalam', cursive;
       h2 {
         position: absolute;
         color: rgb(240, 240, 240);
-        font-size: 80px;
-        font-family: $ubu;
+        font-size: 65px;
+        font-family: $ubu; //***************** ABOUT
         font-weight: 500;
         top: 50%;
         left: 50%;
@@ -79,19 +81,23 @@ $kalam: 'Kalam', cursive;
         height: 175px;
         background-position: center;
         float: right;
+        margin-left: 20px;
         border-radius: 50%;
         filter: grayscale(.2);
         box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
       }
       h2 {
-        font-family: $roboto;
-        font-size: 22px;
+        font-family: $ubu;
+        text-transform: uppercase;
+        font-size: 25px;
         font-weight: 500;
-        margin: 10px 0 5px 0;
+        color: rgb(61, 61, 61);
+        margin: 5px 0 5px 0;
       }
       p {
         font-family: $roboto;
         letter-spacing: 1px;
+        text-align: justify;
         white-space: pre-wrap;
         font-size: 17px;
         line-height: 1.5;
@@ -99,23 +105,25 @@ $kalam: 'Kalam', cursive;
         color: rgb(61, 61, 61);
       }
       h3 {
-        font-family: $roboto;
-        font-size: 22px;
+        font-family: $ubu;
+        text-transform: uppercase;
+        font-size: 25px;
+        color: rgb(61, 61, 61);
         font-weight: 500;
         margin: 25px 0 5px 0;
       }
       .skill-container {
-        margin-top: 20px;
+        padding: 0;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        // position: relative;
         .skill-box {
           position: relative;
           img {
             height: 60px;
             width: 60px;
-            margin: 15px 10px 5px 10px;
+            // margin: 15px 10px 5px 10px;
+            margin: 0px 10px 5px 10px;
             filter: grayscale(.7);
             transition: filter .5s;
             &:hover {
@@ -126,6 +134,7 @@ $kalam: 'Kalam', cursive;
             font-family: $roboto;
             font-size: 13px;
             font-weight: 700;
+            color: rgb(61, 61, 61);
             position: absolute;
             margin-top: -5px;
             left: 50%;
@@ -155,8 +164,8 @@ $kalam: 'Kalam', cursive;
       h2 {
         position: absolute;
         color: rgb(70,70,70);
-        font-size: 50px;
-        font-family: $ubu;
+        font-size: 65px;
+        font-family: $ubu; //************************* PROJECTS
         font-weight: 500;
         top: 50%;
         left: 50%;
@@ -191,14 +200,18 @@ $kalam: 'Kalam', cursive;
             overflow: hidden;
             position: relative;
             h1 {
-              top: 10px;
-              left: 10px;
+              width: 200px;
+              text-align: center;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
               text-decoration: none;
               position: absolute;
-              font-family: $roboto;
-              font-size: 28px;
+              font-family: $ubu;
+              font-size: 35px;
               color: black;
-              font-weight: 700;
+              text-transform: uppercase;
+              // font-weight: 700;
             }
             .moving-img {
               animation: living-imgs 40s infinite;
@@ -231,8 +244,8 @@ $kalam: 'Kalam', cursive;
       h2 {
         position: absolute;
         color: white;
-        font-size: 80px;
-        font-family: $ubu;
+        font-size: 65px;
+        font-family: $ubu; //************************** CONTACT
         font-weight: 500;
         top: 50%;
         left: 50%;
@@ -254,6 +267,7 @@ $kalam: 'Kalam', cursive;
         }
         p {
           font-family: $ubu;
+          text-transform: uppercase;
           font-size: 25px;
           margin: 15px 0;
         }
@@ -273,7 +287,7 @@ $kalam: 'Kalam', cursive;
             position: relative;
             textarea {
               height: 65px;
-              width: 350px;
+              // width: 350px;
               align-self: center;
               border: none;
               overflow: hidden;
@@ -282,37 +296,40 @@ $kalam: 'Kalam', cursive;
               color: rgb(70, 70, 70);
               outline: none;
               box-shadow: none;
-              font-family: $ubu;
-              font-size: 40px;
+              font-family: $roboto;
+              font-size: 33px;
               text-align: center;
               margin-bottom: 15px;
             }
             .copy-btn {
-              width: 75px;
+              // width: 75px;
               position: absolute;
-              background-color: rgb(16, 129, 222);
+              background-color: $projects;
+              // background-color: #f08080;
+              padding: 2px 4px;
               outline: none;
               color: white;
               cursor: pointer;
               font-family: $roboto;
               border: none;
               border-radius: 2px;
-              top: 21px;
-              right: -28px;
-              transition: filter .3s;
+              top: 16px;
+              right: 5px;
+              transition: background-color .2s;
               &:hover {
-                filter: opacity(.8);
+                background-color: rgb(126, 126, 130);
               }
               &:active {
-                background-color: rgb(0, 98, 178);
+                opacity: .8
               }
             }
             i {
+              float: right;
               position: absolute;
               color: rgb(0, 176, 80);
               display: none;
-              top: 22px;
-              right: -49px;
+              top: 17px;
+              right: -17px;
             }
           }
         }
@@ -357,12 +374,13 @@ $kalam: 'Kalam', cursive;
     align-items: center;
     background-color: rgb(61, 61, 61);
     h2 {
-      font-family: $kalam;
-      font-size: 30px;
+      font-family: $ubu;
+      font-size: 65px;
       color: white;
       position: absolute;
-      top: 20px;
-      left: 15px;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%,-80%);
     }
   }
 }

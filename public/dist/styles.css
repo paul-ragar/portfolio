@@ -40,7 +40,7 @@
       .home-view-container .about-section .info-side h2 {
         position: absolute;
         color: #f0f0f0;
-        font-size: 80px;
+        font-size: 65px;
         font-family: "Ubuntu Condensed", sans-serif;
         font-weight: 500;
         top: 50%;
@@ -56,28 +56,34 @@
         height: 175px;
         background-position: center;
         float: right;
+        margin-left: 20px;
         border-radius: 50%;
         filter: grayscale(0.2);
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); }
       .home-view-container .about-section .description-side h2 {
-        font-family: "Roboto", sans-serif;
-        font-size: 22px;
+        font-family: "Ubuntu Condensed", sans-serif;
+        text-transform: uppercase;
+        font-size: 25px;
         font-weight: 500;
-        margin: 10px 0 5px 0; }
+        color: #3d3d3d;
+        margin: 5px 0 5px 0; }
       .home-view-container .about-section .description-side p {
         font-family: "Roboto", sans-serif;
         letter-spacing: 1px;
+        text-align: justify;
         white-space: pre-wrap;
         font-size: 17px;
         line-height: 1.5;
         color: #3d3d3d; }
       .home-view-container .about-section .description-side h3 {
-        font-family: "Roboto", sans-serif;
-        font-size: 22px;
+        font-family: "Ubuntu Condensed", sans-serif;
+        text-transform: uppercase;
+        font-size: 25px;
+        color: #3d3d3d;
         font-weight: 500;
         margin: 25px 0 5px 0; }
       .home-view-container .about-section .description-side .skill-container {
-        margin-top: 20px;
+        padding: 0;
         display: flex;
         justify-content: center;
         flex-wrap: wrap; }
@@ -86,7 +92,7 @@
           .home-view-container .about-section .description-side .skill-container .skill-box img {
             height: 60px;
             width: 60px;
-            margin: 15px 10px 5px 10px;
+            margin: 0px 10px 5px 10px;
             filter: grayscale(0.7);
             transition: filter .5s; }
             .home-view-container .about-section .description-side .skill-container .skill-box img:hover {
@@ -95,6 +101,7 @@
             font-family: "Roboto", sans-serif;
             font-size: 13px;
             font-weight: 700;
+            color: #3d3d3d;
             position: absolute;
             margin-top: -5px;
             left: 50%;
@@ -113,7 +120,7 @@
       .home-view-container .projects-section .panel-side h2 {
         position: absolute;
         color: #464646;
-        font-size: 50px;
+        font-size: 65px;
         font-family: "Ubuntu Condensed", sans-serif;
         font-weight: 500;
         top: 50%;
@@ -122,7 +129,7 @@
     .home-view-container .projects-section .display-side {
       height: 100%;
       width: 70%;
-      background-color: #aab7ad;
+      background-color: #a1a0a5;
       position: relative; }
       .home-view-container .projects-section .display-side .images-container {
         height: 100%;
@@ -145,14 +152,17 @@
             overflow: hidden;
             position: relative; }
             .home-view-container .projects-section .display-side .images-container a .image h1 {
-              top: 10px;
-              left: 10px;
+              width: 200px;
+              text-align: center;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
               text-decoration: none;
               position: absolute;
-              font-family: "Roboto", sans-serif;
-              font-size: 28px;
+              font-family: "Ubuntu Condensed", sans-serif;
+              font-size: 35px;
               color: black;
-              font-weight: 700; }
+              text-transform: uppercase; }
             .home-view-container .projects-section .display-side .images-container a .image .moving-img {
               animation: living-imgs 40s infinite;
               height: 100%;
@@ -170,11 +180,11 @@
       height: 100%;
       width: 50%;
       position: relative;
-      background-color: #a1a0a5; }
+      background-color: #aab7ad; }
       .home-view-container .contact-section .contact-side h2 {
         position: absolute;
         color: white;
-        font-size: 80px;
+        font-size: 65px;
         font-family: "Ubuntu Condensed", sans-serif;
         font-weight: 500;
         top: 50%;
@@ -192,6 +202,7 @@
         text-decoration: none; }
       .home-view-container .contact-section .link-side .contact-wrapper p {
         font-family: "Ubuntu Condensed", sans-serif;
+        text-transform: uppercase;
         font-size: 25px;
         margin: 15px 0; }
       .home-view-container .contact-section .link-side .contact-wrapper .contact-info {
@@ -209,7 +220,6 @@
           position: relative; }
           .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box textarea {
             height: 65px;
-            width: 350px;
             align-self: center;
             border: none;
             overflow: hidden;
@@ -218,33 +228,34 @@
             color: #464646;
             outline: none;
             box-shadow: none;
-            font-family: "Ubuntu Condensed", sans-serif;
-            font-size: 40px;
+            font-family: "Roboto", sans-serif;
+            font-size: 33px;
             text-align: center;
             margin-bottom: 15px; }
           .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box .copy-btn {
-            width: 75px;
             position: absolute;
-            background-color: #1081de;
+            background-color: #a1a0a5;
+            padding: 2px 4px;
             outline: none;
             color: white;
             cursor: pointer;
             font-family: "Roboto", sans-serif;
             border: none;
             border-radius: 2px;
-            top: 21px;
-            right: -28px;
-            transition: filter .3s; }
+            top: 16px;
+            right: 5px;
+            transition: background-color .2s; }
             .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box .copy-btn:hover {
-              filter: opacity(0.8); }
+              background-color: #7e7e82; }
             .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box .copy-btn:active {
-              background-color: #0062b2; }
+              opacity: .8; }
           .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box i {
+            float: right;
             position: absolute;
             color: #00b050;
             display: none;
-            top: 22px;
-            right: -49px; }
+            top: 17px;
+            right: -17px; }
       .home-view-container .contact-section .link-side .contact-wrapper .social-wrap {
         width: 100%;
         display: flex;
@@ -275,12 +286,13 @@
     align-items: center;
     background-color: #3d3d3d; }
     .home-view-container .bottom-section h2 {
-      font-family: "Kalam", cursive;
-      font-size: 30px;
+      font-family: "Ubuntu Condensed", sans-serif;
+      font-size: 65px;
       color: white;
       position: absolute;
-      top: 20px;
-      left: 15px; }
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -80%); }
 
 @keyframes title-slide-down {
   from {

@@ -1,5 +1,5 @@
 angular.module('portfolio')
-.controller('mainCtrl', function($scope, mainService) {
+.controller('mainCtrl', function($scope, mainService, $timeout) {
 
 
   var copyTextareaBtn = document.querySelector('.copy-btn');
@@ -15,6 +15,11 @@ angular.module('portfolio')
       $scope.greenCheck = {
         "display": "flex"
       }
+      $timeout(function () {
+        $scope.greenCheck = {
+          "display": "none"
+        }
+      }, 3000);
     } catch (err) {
       console.log('Oops, unable to copy');
     }
