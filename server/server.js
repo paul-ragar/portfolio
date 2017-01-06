@@ -14,6 +14,6 @@ app.use(express.static(__dirname + './../public'));
 
 
 const port = 8000;
-app.listen(port || 80, () => {
+app.listen(port, () => {
   console.log('Listening on port: ' + port);
 })
