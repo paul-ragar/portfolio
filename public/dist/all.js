@@ -166,6 +166,21 @@ angular.module('portfolio').service('mainService', function ($http, $state) {
 });
 'use strict';
 
+angular.module('portfolio').directive('aboutDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/about/about.html',
+    controller: function controller($scope, $state, mainService) {}
+
+    // End of Controller
+
+    // End of return
+  };
+  // End of Directive
+});
+'use strict';
+
 angular.module('portfolio').directive('carousel', function () {
 
   return {
@@ -211,21 +226,6 @@ angular.module('portfolio').directive('carousel', function () {
 
       // End of Controller
     }
-    // End of return
-  };
-  // End of Directive
-});
-'use strict';
-
-angular.module('portfolio').directive('aboutDir', function () {
-
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/about/about.html',
-    controller: function controller($scope, $state, mainService) {}
-
-    // End of Controller
-
     // End of return
   };
   // End of Directive
