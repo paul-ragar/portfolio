@@ -41,6 +41,7 @@ $kalam: 'Kalam', cursive;
         font-size: 23px;
         font-family: 'Ubuntu Condensed', sans-serif;
         letter-spacing: 1px;
+        white-space: nowrap;
       }
     }
   }
@@ -156,14 +157,16 @@ $kalam: 'Kalam', cursive;
     flex-wrap: nowrap;
     .panel-side {
       height: 100%;
-      width: 30%;
+      min-width: 30%;
       position: relative;
       background-color: rgb(240, 240, 240);
       // background-color: $projects;
+      z-index: 99;
 
       h2 {
         position: absolute;
         color: rgb(70,70,70);
+        white-space: nowrap;
         font-size: 65px;
         font-family: $ubu; //************************* PROJECTS
         font-weight: 500;
@@ -174,7 +177,7 @@ $kalam: 'Kalam', cursive;
     }
     .display-side {
       height: 100%;
-      width: 70%;
+      min-width: 70%;
       background-color: $projects;
       // background-color: rgb(240, 240, 240);
 
@@ -225,9 +228,79 @@ $kalam: 'Kalam', cursive;
           }
         }
       }
+      .project-content {
+        height: 100%;
+        min-width: 70%;
+        background-color: $projects;
+        position: absolute;
+        padding: 20px;
+        img {
+          // height: 200px;
+          width: 100%;
+        }
+        button {
+          cursor: pointer;
+        }
+      }
     }
   }
 
+  .images-container.ng-hide-add {
+    animation: list-slide-out 1.5s forwards;
+  }
+  .images-container.ng-hide-remove {
+    animation: list-slide-in 1.5s forwards;
+  }
+  .project-content.ng-hide-remove {
+    animation: selected-slide-in 1.5s forwards;
+  }
+  .project-content.ng-hide-add {
+    animation: selected-slide-out 1.5s forwards;
+  }
+
+  //THIS IS FOR THE LIST OF PROJECTS
+  @keyframes list-slide-out {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-100%);
+      opacity: 0.7;
+    }
+  }
+  @keyframes list-slide-in {
+    from {
+      transform: translateX(-100%);
+      opacity: 0.7;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  // THIS IS FOR THE SELECTED PROJECT
+  @keyframes selected-slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0.7;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes selected-slide-out {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0.7;
+    }
+  }
 
 
   .contact-section {
@@ -285,27 +358,23 @@ $kalam: 'Kalam', cursive;
             justify-content: center;
             align-items: center;
             position: relative;
-            textarea {
-              height: 65px;
-              // width: 350px;
-              align-self: center;
-              border: none;
-              overflow: hidden;
-              background-color: transparent;
-              resize: none;
+            h1 {
+              cursor: pointer;
               color: rgb(70, 70, 70);
-              outline: none;
-              box-shadow: none;
               font-family: $roboto;
               font-size: 33px;
               text-align: center;
               margin-bottom: 15px;
+              transition: all .3s;
+              &:hover {
+                color: #f08080;
+                color: $contact;
+                transform: scale(1.03);
+              }
             }
             .copy-btn {
-              // width: 75px;
               position: absolute;
               background-color: $projects;
-              // background-color: #f08080;
               padding: 2px 4px;
               outline: none;
               color: white;

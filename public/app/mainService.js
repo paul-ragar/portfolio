@@ -48,44 +48,42 @@ angular.module('portfolio')
     }
   }
 
-  this.projects = {
-    nixon: {
-      title: "Nixon",
-      description: "",
-      hreflink: "https://paul-ragar.github.io/nixon-landing-page/",
-      image: "https://dl.dropboxusercontent.com/s/xv364dh1osj5vzm/Screen%20Shot%202017-01-02%20at%206.44.18%20PM.png?dl=0"
-    },
-    tutube: {
+  this.getProjectContent = (id) => {
+    // console.log("From the mainService: ",this.projects[id]);
+    return this.projects[id];
+  }
+  
+  this.projects = [{
+    title: "Nixon",
+    description: "",
+    hreflink: "https://paul-ragar.github.io/nixon-landing-page/",
+    image: "https://dl.dropboxusercontent.com/s/xv364dh1osj5vzm/Screen%20Shot%202017-01-02%20at%206.44.18%20PM.png?dl=0"
+    },{
       title: "TúTube",
       description: "",
       hreflink: "",
       image: "https://dl.dropboxusercontent.com/s/p9byf7goeje3kfl/Screen%20Shot%202017-01-02%20at%207.53.47%20PM.png?dl=0"
-    },
-    recipe: {
+    },{
       title: "Recipe Box",
       description: "",
       hreflink: "",
       image: "https://dl.dropboxusercontent.com/s/x65uvwal6x8u1rt/Screen%20Shot%202017-01-02%20at%207.46.45%20PM.png?dl=0"
-    },
-    desert: {
+    },{
       title: "Desert Twig",
       description: "",
       hreflink: "",
       image: "https://dl.dropboxusercontent.com/s/rjecm1j9gfqgv5t/Screen%20Shot%202017-01-02%20at%207.04.30%20PM.png?dl=0"
-    },
-    shut: {
+    },{
       title: "Shut the Box",
       description: "",
       hreflink: "https://paul-ragar.github.io/shut-the-box/",
       image: "https://dl.dropboxusercontent.com/s/mejb937qyjgibii/Screen%20Shot%202017-01-02%20at%207.37.53%20PM.png?dl=0"
-    },
-    snake: {
+    },{
       title: "Snake",
       description: "",
       hreflink: "http://paulragar.com/#/game",
       image: "https://dl.dropboxusercontent.com/s/194n7tug9gk8cbl/Screen%20Shot%202017-01-02%20at%2010.22.56%20PM.png?dl=0"
-    }
-  }
+    }];
 
 
 

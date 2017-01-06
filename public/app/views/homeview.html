@@ -16,7 +16,8 @@
     <div class="description-side">
       <img class="profile-pic" src="https://dl.dropboxusercontent.com/s/605n1y2u1roohka/Screen%20Shot%202016-12-16%20at%208.29.34%20PM.png?dl=0" />
       <h2>This is why I code</h2>
-      <p>While growing up I was surrounded with creativity. My dad, and his dad were both in the creative ad industry. I aspired to be just like them. Later on I found myself in college pursuing a degree in accounting. I figured it would be a safe choice considering that all businesses need accountants, and I would always be employed. During my schooling I enrolled in an advanced accounting class that explored Excel Visual Basic for Applications. It was the first sip of code that I had ever tasted, and I was hooked. I began teaching myself with every free tutorial I could find online. I then shifted my education towards web developing and have been creating ever since. Now I am proud to say that I can build full stack applications using multiple languages, and I'm eager to learn more as technology rapidly grows.</p>
+      <!-- <p>While growing up I was surrounded with creativity. My dad, and his dad were both in the creative ad industry. I aspired to be just like them. Later on I found myself in college pursuing a degree in accounting. I figured it would be a safe choice considering that all businesses need accountants, and I would always be employed. During my schooling I enrolled in an advanced accounting class that explored Excel Visual Basic for Applications. It was the first sip of code that I had ever tasted, and I was hooked. I began teaching myself with every free tutorial I could find online. I then shifted my education towards web developing and have been creating ever since. Now I am proud to say that I can build full stack applications using multiple languages, and I'm eager to learn more as technology rapidly grows.</p> -->
+      <p>Creativity is in my genes. My dad, and his dad, worked in creative industries. Even though I have always had creative interests, I started my college education in pursuit of a degree in accounting. It was an advanced accounting class that first introduced me to Excel Visual Basic for Applications. From that point on I became completely absorbed in learning every bit of code I could. This newfound interest altered my educational, and ultimately my professional, path to web development. Now I create everyday building full stack applications using multiple languages. And I look forward to a lifetime of learning as technology continues to advance.</p>
       <h3>Here's what I use to create</h3>
       <div class="skill-container">
         <div class="skill-box" ng-repeat="skill in skills">
@@ -31,18 +32,25 @@
   <div class="projects-section">
     <div class="panel-side">
       <a name="projectsanchor"></a>
-      <h2>PROJECTS</h2>
+      <h2>MY WORK</h2>
     </div>
     <div class="display-side">
-      <div class="images-container">
-        <a target="_blank" ng-repeat="project in projects" href="{{project.hreflink}}" ng-mouseenter="projectHover = true" ng-mouseleave="projectHover = false">
+      <div class="images-container" ng-show="projectList">
+        <a target="_blank" ng-repeat="project in projects track by $index" ng-click="showProjectContent($index)" ng-mouseenter="projectHover = true" ng-mouseleave="projectHover = false">
           <div class="image">
             <h1 ng-show="projectHover">{{project.title}}</h1>
             <img class="moving-img" src="{{project.image}}" alt="" />
           </div>
         </a>
       </div>
+      <div ng-show="projectContent" class="project-content">
+
+        <img src="{{selectedProject.image}}" alt="" />
+        <h1>You're looking at {{selectedProject.title}}</h1>
+        <button ng-click="backToProjectList()" type="button" name="button">Back</button>
+      </div>
     </div>
+
   </div>
 
   <div class="contact-section">
@@ -55,9 +63,9 @@
         <div class="contact-info">
           <p>Feel free to reach out to me with my email below</p>
           <div class="email-copy-box">
-            <textarea class="email-copy-text">paul.ragar@gmail.com</textarea>
-            <button class="copy-btn" type="button" name="button" ng-click="copyText()">Copy Email</button>
-            <i ng-style="greenCheck" class="fa fa-check-square-o" aria-hidden="true"></i>
+            <h1 ng-click="openMailer()" class="email-copy-text">paul.ragar@gmail.com</h1>
+            <!-- <button class="copy-btn" type="button" name="button" ng-click="copyText()">Copy Email</button>
+            <i ng-style="greenCheck" class="fa fa-check-square-o" aria-hidden="true"></i> -->
           </div>
         </div>
         <div class="social-wrap">
@@ -69,7 +77,6 @@
             <a target="_blank" href="https://www.linkedin.com/in/paul-ragar">
               <i class="fa fa-linkedin"  aria-hidden="true"></i>
             </a>
-
           </div>
         </div>
       </div>

@@ -24,7 +24,8 @@
       .home-view-container .svg-section .title h2 {
         font-size: 23px;
         font-family: 'Ubuntu Condensed', sans-serif;
-        letter-spacing: 1px; }
+        letter-spacing: 1px;
+        white-space: nowrap; }
   .home-view-container .about-section {
     width: 100%;
     height: 100vh;
@@ -114,12 +115,14 @@
     flex-wrap: nowrap; }
     .home-view-container .projects-section .panel-side {
       height: 100%;
-      width: 30%;
+      min-width: 30%;
       position: relative;
-      background-color: #f0f0f0; }
+      background-color: #f0f0f0;
+      z-index: 99; }
       .home-view-container .projects-section .panel-side h2 {
         position: absolute;
         color: #464646;
+        white-space: nowrap;
         font-size: 65px;
         font-family: "Ubuntu Condensed", sans-serif;
         font-weight: 500;
@@ -128,7 +131,7 @@
         transform: translate(-50%, -50%); }
     .home-view-container .projects-section .display-side {
       height: 100%;
-      width: 70%;
+      min-width: 70%;
       background-color: #a1a0a5;
       position: relative; }
       .home-view-container .projects-section .display-side .images-container {
@@ -170,6 +173,56 @@
               transition: filter .6s; }
               .home-view-container .projects-section .display-side .images-container a .image .moving-img:hover {
                 filter: opacity(0.2); }
+      .home-view-container .projects-section .display-side .project-content {
+        height: 100%;
+        min-width: 70%;
+        background-color: #a1a0a5;
+        position: absolute;
+        padding: 20px; }
+        .home-view-container .projects-section .display-side .project-content img {
+          width: 100%; }
+        .home-view-container .projects-section .display-side .project-content button {
+          cursor: pointer; }
+  .home-view-container .images-container.ng-hide-add {
+    animation: list-slide-out 1.5s forwards; }
+  .home-view-container .images-container.ng-hide-remove {
+    animation: list-slide-in 1.5s forwards; }
+  .home-view-container .project-content.ng-hide-remove {
+    animation: selected-slide-in 1.5s forwards; }
+  .home-view-container .project-content.ng-hide-add {
+    animation: selected-slide-out 1.5s forwards; }
+
+@keyframes list-slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1; }
+  to {
+    transform: translateX(-100%);
+    opacity: 0.7; } }
+
+@keyframes list-slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.7; }
+  to {
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes selected-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0.7; }
+  to {
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes selected-slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1; }
+  to {
+    transform: translateX(100%);
+    opacity: 0.7; } }
   .home-view-container .contact-section {
     width: 100%;
     height: 100vh;
@@ -218,20 +271,18 @@
           justify-content: center;
           align-items: center;
           position: relative; }
-          .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box textarea {
-            height: 65px;
-            align-self: center;
-            border: none;
-            overflow: hidden;
-            background-color: transparent;
-            resize: none;
+          .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box h1 {
+            cursor: pointer;
             color: #464646;
-            outline: none;
-            box-shadow: none;
             font-family: "Roboto", sans-serif;
             font-size: 33px;
             text-align: center;
-            margin-bottom: 15px; }
+            margin-bottom: 15px;
+            transition: all .3s; }
+            .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box h1:hover {
+              color: #f08080;
+              color: #aab7ad;
+              transform: scale(1.03); }
           .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box .copy-btn {
             position: absolute;
             background-color: #a1a0a5;

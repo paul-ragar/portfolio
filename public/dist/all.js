@@ -24,35 +24,61 @@ angular.module('portfolio', ['ui.router', 'ngAnimate']).config(function ($stateP
 
 angular.module('portfolio').controller('mainCtrl', function ($scope, mainService, $timeout) {
 
-  var copyTextareaBtn = document.querySelector('.copy-btn');
+  $scope.projectList = true;
+  $scope.projectContent = false;
 
-  $scope.copyText = function () {
-    var copyTextarea = document.querySelector('.email-copy-text');
-    copyTextarea.select();
+  $scope.showProjectContent = function (id) {
+    // console.log("Selected Project ID: ",id);
+    $scope.selectedProject = mainService.getProjectContent(id);
+    $scope.projectContent = true;
+    $scope.projectList = false;
+  };
+  $scope.backToProjectList = function () {
+    $scope.projectContent = false;
+    $scope.projectList = true;
+  };
 
-    try {
-      var successful = document.execCommand('copy');
-      var msg = successful ? 'successful' : 'unsuccessful';
-      console.log('Copying text command was ' + msg);
-      $scope.greenCheck = {
-        "display": "flex"
-      };
-      $timeout(function () {
-        $scope.greenCheck = {
-          "display": "none"
-        };
-      }, 3000);
-    } catch (err) {
-      console.log('Oops, unable to copy');
-    }
+  $scope.openMailer = function () {
+    window.location.href = "mailto:paul.ragar@gmail.com?subject=Job&body=Hey%20there%20buddy!";
   };
 
   $scope.skills = mainService.skills;
   $scope.projects = mainService.projects;
+
+  // NG-REPEAT LINKS FROM class="images-container" a tag
+  // href="{{project.hreflink}}"
+
 });
+
+// CODE TO COPY SPECIFIED TEXT TO CLIPBOARD
+
+
+// var copyTextareaBtn = document.querySelector('.copy-btn');
+
+// $scope.copyText = () => {
+//   var copyTextarea = document.querySelector('.email-copy-text');
+//   copyTextarea.select();
+//
+//   try {
+//     var successful = document.execCommand('copy');
+//     var msg = successful ? 'successful' : 'unsuccessful';
+//     console.log('Copying text command was ' + msg);
+//     $scope.greenCheck = {
+//       "display": "flex"
+//     }
+//     $timeout(function () {
+//       $scope.greenCheck = {
+//         "display": "none"
+//       }
+//     }, 3000);
+//   } catch (err) {
+//     console.log('Oops, unable to copy');
+//   }
+// }
 'use strict';
 
 angular.module('portfolio').service('mainService', function ($http, $state) {
+  var _this = this;
 
   this.skills = {
     angularjs: {
@@ -101,90 +127,42 @@ angular.module('portfolio').service('mainService', function ($http, $state) {
     }
   };
 
-  this.projects = {
-    nixon: {
-      title: "Nixon",
-      description: "",
-      hreflink: "https://paul-ragar.github.io/nixon-landing-page/",
-      image: "https://dl.dropboxusercontent.com/s/xv364dh1osj5vzm/Screen%20Shot%202017-01-02%20at%206.44.18%20PM.png?dl=0"
-    },
-    tutube: {
-      title: "TúTube",
-      description: "",
-      hreflink: "",
-      image: "https://dl.dropboxusercontent.com/s/p9byf7goeje3kfl/Screen%20Shot%202017-01-02%20at%207.53.47%20PM.png?dl=0"
-    },
-    recipe: {
-      title: "Recipe Box",
-      description: "",
-      hreflink: "",
-      image: "https://dl.dropboxusercontent.com/s/x65uvwal6x8u1rt/Screen%20Shot%202017-01-02%20at%207.46.45%20PM.png?dl=0"
-    },
-    desert: {
-      title: "Desert Twig",
-      description: "",
-      hreflink: "",
-      image: "https://dl.dropboxusercontent.com/s/rjecm1j9gfqgv5t/Screen%20Shot%202017-01-02%20at%207.04.30%20PM.png?dl=0"
-    },
-    shut: {
-      title: "Shut the Box",
-      description: "",
-      hreflink: "https://paul-ragar.github.io/shut-the-box/",
-      image: "https://dl.dropboxusercontent.com/s/mejb937qyjgibii/Screen%20Shot%202017-01-02%20at%207.37.53%20PM.png?dl=0"
-    },
-    snake: {
-      title: "Snake",
-      description: "",
-      hreflink: "http://paulragar.com/#/game",
-      image: "https://dl.dropboxusercontent.com/s/194n7tug9gk8cbl/Screen%20Shot%202017-01-02%20at%2010.22.56%20PM.png?dl=0"
-    }
+  this.getProjectContent = function (id) {
+    // console.log("From the mainService: ",this.projects[id]);
+    return _this.projects[id];
   };
-});
-"use strict";
 
-angular.module('portfolio').directive("drawing", function () {
-  return {
-    restrict: "E",
-    templateUrl: './app/directives/drawing/drawing.html',
-    controller: function controller($scope) {
-
-      $scope.isDrawing = false;
-      $scope.drawingArr = [];
-      $scope.lineArr = [];
-      $scope.dot;
-
-      $scope.drawingArr.push($scope.lineArr);
-
-      $scope.singleClick = function () {
-        $scope.dot = {
-          x: event.offsetX,
-          y: event.offsetY
-        };
-        $scope.lineArr.push($scope.dot);
-      };
-      $scope.startDraw = function () {
-        $scope.isDrawing = true;
-      };
-      $scope.stopDraw = function () {
-        $scope.isDrawing = false;
-        $scope.drawingArr.push($scope.lineArr);
-        console.log("drawingArr: ", $scope.drawingArr);
-      };
-      $scope.lineDraw = function () {
-        if ($scope.isDrawing) {
-          $scope.dot = {
-            x: event.offsetX,
-            y: event.offsetY
-          };
-          $scope.lineArr.push($scope.dot);
-        } else {
-          return false;
-        }
-      };
-
-      //END OF CONTROLLER
-    }
-  };
+  this.projects = [{
+    title: "Nixon",
+    description: "",
+    hreflink: "https://paul-ragar.github.io/nixon-landing-page/",
+    image: "https://dl.dropboxusercontent.com/s/xv364dh1osj5vzm/Screen%20Shot%202017-01-02%20at%206.44.18%20PM.png?dl=0"
+  }, {
+    title: "TúTube",
+    description: "",
+    hreflink: "",
+    image: "https://dl.dropboxusercontent.com/s/p9byf7goeje3kfl/Screen%20Shot%202017-01-02%20at%207.53.47%20PM.png?dl=0"
+  }, {
+    title: "Recipe Box",
+    description: "",
+    hreflink: "",
+    image: "https://dl.dropboxusercontent.com/s/x65uvwal6x8u1rt/Screen%20Shot%202017-01-02%20at%207.46.45%20PM.png?dl=0"
+  }, {
+    title: "Desert Twig",
+    description: "",
+    hreflink: "",
+    image: "https://dl.dropboxusercontent.com/s/rjecm1j9gfqgv5t/Screen%20Shot%202017-01-02%20at%207.04.30%20PM.png?dl=0"
+  }, {
+    title: "Shut the Box",
+    description: "",
+    hreflink: "https://paul-ragar.github.io/shut-the-box/",
+    image: "https://dl.dropboxusercontent.com/s/mejb937qyjgibii/Screen%20Shot%202017-01-02%20at%207.37.53%20PM.png?dl=0"
+  }, {
+    title: "Snake",
+    description: "",
+    hreflink: "http://paulragar.com/#/game",
+    image: "https://dl.dropboxusercontent.com/s/194n7tug9gk8cbl/Screen%20Shot%202017-01-02%20at%2010.22.56%20PM.png?dl=0"
+  }];
 });
 'use strict';
 
@@ -252,79 +230,51 @@ angular.module('portfolio').directive('aboutDir', function () {
   };
   // End of Directive
 });
-'use strict';
+"use strict";
 
-angular.module('portfolio').directive('svgDir', function () {
-
+angular.module('portfolio').directive("drawing", function () {
   return {
-    restrict: 'E',
-    templateUrl: './app/directives/svgDir/svgDir.html',
-    controller: function controller($scope, $state, mainService) {}
-  };
-});
-'use strict';
+    restrict: "E",
+    templateUrl: './app/directives/drawing/drawing.html',
+    controller: function controller($scope) {
 
-angular.module('portfolio').directive('navBar', function () {
+      $scope.isDrawing = false;
+      $scope.drawingArr = [];
+      $scope.lineArr = [];
+      $scope.dot;
 
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/nav-bar/nav-bar.html',
-    controller: function controller($scope, $state, mainService) {
+      $scope.drawingArr.push($scope.lineArr);
 
-      $scope.goAbout = function () {
-        document.querySelector('.about-section').scrollIntoView({
-          "scroll-behavior": "smooth"
-        });
+      $scope.singleClick = function () {
+        $scope.dot = {
+          x: event.offsetX,
+          y: event.offsetY
+        };
+        $scope.lineArr.push($scope.dot);
       };
-      $scope.goProjects = function () {
-        document.querySelector('.projects-section').scrollIntoView({
-          "behavior": "smooth"
-        });
+      $scope.startDraw = function () {
+        $scope.isDrawing = true;
       };
-      $scope.goContact = function () {
-        document.querySelector('.contact-section').scrollIntoView({
-          "behavior": "smooth"
-        });
+      $scope.stopDraw = function () {
+        $scope.isDrawing = false;
+        $scope.drawingArr.push($scope.lineArr);
+        console.log("drawingArr: ", $scope.drawingArr);
       };
-
-      // $(function(){
-      //
-      //   $('a[href^="#"]').click(function(){
-      //
-      //     var target = $(this).attr('href');
-      //     var strip = target.slice(1);
-      //     var anchor = $("a[name='" + strip + "']")
-      //
-      //     // e.preventDefault();
-      //
-      //     $('html, body').animate({
-      //
-      //       scrollTop: anchor.offset().top
-      //
-      //     }, 'slow');
-      //
-      //   });
-      //
-      // });
-
-      $('a[href*="#"]:not([href="#"])').click(function () {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
+      $scope.lineDraw = function () {
+        if ($scope.isDrawing) {
+          $scope.dot = {
+            x: event.offsetX,
+            y: event.offsetY
+          };
+          $scope.lineArr.push($scope.dot);
+        } else {
+          return false;
         }
-      });
+      };
 
-      // End of Controller
+      //END OF CONTROLLER
     }
-    // End of return
   };
-  // End of Directive
 });
 'use strict';
 
@@ -463,5 +413,79 @@ angular.module('portfolio').directive('gameDir', function () {
         $timeout($scope.direction, $scope.speed);
       };
     }
+  };
+});
+'use strict';
+
+angular.module('portfolio').directive('navBar', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/nav-bar/nav-bar.html',
+    controller: function controller($scope, $state, mainService) {
+
+      $scope.goAbout = function () {
+        document.querySelector('.about-section').scrollIntoView({
+          "scroll-behavior": "smooth"
+        });
+      };
+      $scope.goProjects = function () {
+        document.querySelector('.projects-section').scrollIntoView({
+          "behavior": "smooth"
+        });
+      };
+      $scope.goContact = function () {
+        document.querySelector('.contact-section').scrollIntoView({
+          "behavior": "smooth"
+        });
+      };
+
+      // $(function(){
+      //
+      //   $('a[href^="#"]').click(function(){
+      //
+      //     var target = $(this).attr('href');
+      //     var strip = target.slice(1);
+      //     var anchor = $("a[name='" + strip + "']")
+      //
+      //     // e.preventDefault();
+      //
+      //     $('html, body').animate({
+      //
+      //       scrollTop: anchor.offset().top
+      //
+      //     }, 'slow');
+      //
+      //   });
+      //
+      // });
+
+      $('a[href*="#"]:not([href="#"])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+
+      // End of Controller
+    }
+    // End of return
+  };
+  // End of Directive
+});
+'use strict';
+
+angular.module('portfolio').directive('svgDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/svgDir/svgDir.html',
+    controller: function controller($scope, $state, mainService) {}
   };
 });
