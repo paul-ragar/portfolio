@@ -280,8 +280,7 @@
             margin-bottom: 15px;
             transition: all .3s; }
             .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box h1:hover {
-              color: #f08080;
-              color: #aab7ad;
+              color: #729daa;
               transform: scale(1.03); }
           .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box .copy-btn {
             position: absolute;
