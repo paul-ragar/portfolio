@@ -133,6 +133,7 @@
       height: 100%;
       min-width: 70%;
       background-color: #a1a0a5;
+      overflow: hidden;
       position: relative; }
       .home-view-container .projects-section .display-side .images-container {
         height: 100%;
@@ -181,16 +182,46 @@
         padding: 20px; }
         .home-view-container .projects-section .display-side .project-content img {
           width: 100%; }
-        .home-view-container .projects-section .display-side .project-content button {
-          cursor: pointer; }
+        .home-view-container .projects-section .display-side .project-content h1 {
+          padding: 10px;
+          font-family: "Roboto", sans-serif;
+          font-size: 26px;
+          color: #3d3d3d; }
+        .home-view-container .projects-section .display-side .project-content .fa {
+          font-size: 35px;
+          color: #3d3d3d;
+          position: absolute;
+          opacity: .6;
+          cursor: pointer;
+          transition: all .2s;
+          left: 0; }
+          .home-view-container .projects-section .display-side .project-content .fa:hover {
+            transform: scale(1.2);
+            opacity: .8; }
+        .home-view-container .projects-section .display-side .project-content .href-wrapper {
+          width: 100%;
+          display: flex;
+          justify-content: center; }
+          .home-view-container .projects-section .display-side .project-content .href-wrapper a {
+            display: flex;
+            text-decoration: none; }
+            .home-view-container .projects-section .display-side .project-content .href-wrapper a .href-button {
+              padding: 10px;
+              background-color: #3d3d3d; }
+              .home-view-container .projects-section .display-side .project-content .href-wrapper a .href-button h2 {
+                font-family: "Roboto", sans-serif;
+                font-size: 26px;
+                color: #3d3d3d;
+                font-weight: 400;
+                color: #f0f0f0; }
   .home-view-container .images-container.ng-hide-add {
-    animation: list-slide-out 1.5s forwards; }
+    animation: list-slide-out .9s forwards; }
   .home-view-container .images-container.ng-hide-remove {
-    animation: list-slide-in 1.5s forwards; }
+    animation: list-slide-in .9s forwards; }
   .home-view-container .project-content.ng-hide-remove {
-    animation: selected-slide-in 1.5s forwards; }
+    animation: selected-slide-in .9s forwards; }
   .home-view-container .project-content.ng-hide-add {
-    animation: selected-slide-out 1.5s forwards; }
+    animation: selected-slide-out .9s forwards; }
 
 @keyframes list-slide-out {
   from {
@@ -223,6 +254,52 @@
   to {
     transform: translateX(100%);
     opacity: 0.7; } }
+  .home-view-container .modal-background {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: flex-start; }
+    .home-view-container .modal-background .modal-image-container {
+      height: 100vh;
+      z-index: 19999;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap; }
+      .home-view-container .modal-background .modal-image-container .image-wrapper {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .home-view-container .modal-background .modal-image-container .image-wrapper img {
+          width: 85%; }
+    .home-view-container .modal-background i {
+      cursor: pointer;
+      z-index: 1999999; }
+    .home-view-container .modal-background .left-arrow {
+      position: fixed;
+      top: 50%;
+      transform: translate(-50%);
+      left: 10px;
+      z-index: 1999999; }
+      .home-view-container .modal-background .left-arrow .fa-chevron-circle-left {
+        color: #f0f0f0;
+        font-size: 50px;
+        cursor: pointer; }
+    .home-view-container .modal-background .right-arrow {
+      position: fixed;
+      top: 50%;
+      transform: translate(-50%);
+      right: 10px;
+      z-index: 1999999;
+      background-color: blue; }
+      .home-view-container .modal-background .right-arrow .fa-chevron-circle-right {
+        color: #f0f0f0;
+        font-size: 50px;
+        cursor: pointer; }
   .home-view-container .contact-section {
     width: 100%;
     height: 100vh;
@@ -335,14 +412,20 @@
     justify-content: center;
     align-items: center;
     background-color: #3d3d3d; }
-    .home-view-container .bottom-section h2 {
-      font-family: "Ubuntu Condensed", sans-serif;
-      font-size: 65px;
-      color: white;
+    .home-view-container .bottom-section .draw-text-wrap {
       position: absolute;
       top: 20%;
       left: 50%;
-      transform: translate(-50%, -80%); }
+      transform: translate(-50%, -80%);
+      text-align: center; }
+      .home-view-container .bottom-section .draw-text-wrap h2 {
+        font-family: "Ubuntu Condensed", sans-serif;
+        font-size: 65px;
+        color: #f0f0f0; }
+      .home-view-container .bottom-section .draw-text-wrap h1 {
+        font-family: "Ubuntu Condensed", sans-serif;
+        font-size: 23px;
+        color: #f0f0f0; }
 
 @keyframes title-slide-down {
   from {

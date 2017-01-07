@@ -3,23 +3,50 @@ angular.module('portfolio')
 
   $scope.projectList = true;
   $scope.projectContent = false;
-
+  $scope.desertTwig = mainService.desertTwig;
+  $scope.desertTwigSlider = {
+    left: 0
+  }
 
   $scope.showProjectContent = (id) => {
     // console.log("Selected Project ID: ",id);
     $scope.selectedProject = mainService.getProjectContent(id);
     $scope.projectContent = true;
     $scope.projectList = false;
-
   }
+
   $scope.backToProjectList = () => {
     $scope.projectContent = false;
     $scope.projectList = true;
-    
+  }
+
+  $scope.displayModal = (value) => {
+    if (value) {
+      console.log("hello");
+      $scope.desertTwigModal = true;
+    } else {
+      return false;
+    }
+  }
+  $scope.hideModal = () => {
+    $scope.desertTwigModal = false;
+  }
+  $scope.panLeft = () => {
+    $scope.desertTwigModal = true;
+
+  }
+  $scope.panRight = () => {
+    $scope.desertTwigModal = true;
+
+    var currentLeft = $scope.desertTwigSlider.left;
+    console.log(currentLeft);
+    $scope.desertTwigSlider = {
+      "left": -100
+    }
   }
 
   $scope.openMailer = () => {
-    window.location.href = "mailto:paul.ragar@gmail.com?subject=Job&body=Hey%20there%20buddy!";
+    window.location.href = "mailto:paul.ragar@gmail.com?subject=&body=";
   }
 
   $scope.skills = mainService.skills;

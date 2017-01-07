@@ -26,6 +26,10 @@ angular.module('portfolio').controller('mainCtrl', function ($scope, mainService
 
   $scope.projectList = true;
   $scope.projectContent = false;
+  $scope.desertTwig = mainService.desertTwig;
+  $scope.desertTwigSlider = {
+    left: 0
+  };
 
   $scope.showProjectContent = function (id) {
     // console.log("Selected Project ID: ",id);
@@ -33,13 +37,38 @@ angular.module('portfolio').controller('mainCtrl', function ($scope, mainService
     $scope.projectContent = true;
     $scope.projectList = false;
   };
+
   $scope.backToProjectList = function () {
     $scope.projectContent = false;
     $scope.projectList = true;
   };
 
+  $scope.displayModal = function (value) {
+    if (value) {
+      console.log("hello");
+      $scope.desertTwigModal = true;
+    } else {
+      return false;
+    }
+  };
+  $scope.hideModal = function () {
+    $scope.desertTwigModal = false;
+  };
+  $scope.panLeft = function () {
+    $scope.desertTwigModal = true;
+  };
+  $scope.panRight = function () {
+    $scope.desertTwigModal = true;
+
+    var currentLeft = $scope.desertTwigSlider.left;
+    console.log(currentLeft);
+    $scope.desertTwigSlider = {
+      "left": -100
+    };
+  };
+
   $scope.openMailer = function () {
-    window.location.href = "mailto:paul.ragar@gmail.com?subject=Job&body=Hey%20there%20buddy!";
+    window.location.href = "mailto:paul.ragar@gmail.com?subject=&body=";
   };
 
   $scope.skills = mainService.skills;
@@ -134,34 +163,53 @@ angular.module('portfolio').service('mainService', function ($http, $state) {
 
   this.projects = [{
     title: "Nixon",
-    description: "",
+    description: "A static front-end clone of the Nixon website's landing page",
     hreflink: "https://paul-ragar.github.io/nixon-landing-page/",
-    image: "https://dl.dropboxusercontent.com/s/xv364dh1osj5vzm/Screen%20Shot%202017-01-02%20at%206.44.18%20PM.png?dl=0"
+    image: "https://dl.dropboxusercontent.com/s/xv364dh1osj5vzm/Screen%20Shot%202017-01-02%20at%206.44.18%20PM.png?dl=0",
+    buttontag: "See more here"
   }, {
     title: "TúTube",
-    description: "",
+    description: "TúTube is a fully functional clone of the popular video sharing network, YouTube",
     hreflink: "",
-    image: "https://dl.dropboxusercontent.com/s/p9byf7goeje3kfl/Screen%20Shot%202017-01-02%20at%207.53.47%20PM.png?dl=0"
+    image: "https://dl.dropboxusercontent.com/s/p9byf7goeje3kfl/Screen%20Shot%202017-01-02%20at%207.53.47%20PM.png?dl=0",
+    buttontag: "See more here"
   }, {
     title: "Recipe Box",
-    description: "",
-    hreflink: "",
-    image: "https://dl.dropboxusercontent.com/s/x65uvwal6x8u1rt/Screen%20Shot%202017-01-02%20at%207.46.45%20PM.png?dl=0"
+    description: "Recipe Box is a user friendly web app that allows the user to login and store their favorite recipes. Now I am able to connect and share recipes with my family although we are miles apart.",
+    hreflink: "http://104.131.73.6/#/home",
+    image: "https://dl.dropboxusercontent.com/s/x65uvwal6x8u1rt/Screen%20Shot%202017-01-02%20at%207.46.45%20PM.png?dl=0",
+    buttontag: "See more here"
   }, {
     title: "Desert Twig",
-    description: "",
-    hreflink: "",
-    image: "https://dl.dropboxusercontent.com/s/rjecm1j9gfqgv5t/Screen%20Shot%202017-01-02%20at%207.04.30%20PM.png?dl=0"
+    description: "Desert Twig is an ecommerce website built for a family member's Etsy shop. I was able to work with them on a client based relationship and create what they had always wanted for their business. ",
+    hreflink: "javascript:;",
+    projectFn: true,
+    image: "https://dl.dropboxusercontent.com/s/rjecm1j9gfqgv5t/Screen%20Shot%202017-01-02%20at%207.04.30%20PM.png?dl=0",
+    buttontag: "See more here"
   }, {
     title: "Shut the Box",
-    description: "",
+    description: "Shut the Box, a family favorite game. I took the opportunity of recreating this popular dice game in order to push my logic skills even further",
     hreflink: "https://paul-ragar.github.io/shut-the-box/",
-    image: "https://dl.dropboxusercontent.com/s/mejb937qyjgibii/Screen%20Shot%202017-01-02%20at%207.37.53%20PM.png?dl=0"
+    image: "https://dl.dropboxusercontent.com/s/mejb937qyjgibii/Screen%20Shot%202017-01-02%20at%207.37.53%20PM.png?dl=0",
+    buttontag: "See more here"
   }, {
     title: "Snake",
-    description: "",
+    description: "This recreation of the game 'Snake' was an enjoyable way to develop new skills and perspectives of how games function.",
     hreflink: "http://paulragar.com/#/game",
-    image: "https://dl.dropboxusercontent.com/s/194n7tug9gk8cbl/Screen%20Shot%202017-01-02%20at%2010.22.56%20PM.png?dl=0"
+    image: "https://dl.dropboxusercontent.com/s/194n7tug9gk8cbl/Screen%20Shot%202017-01-02%20at%2010.22.56%20PM.png?dl=0",
+    buttontag: "See more here"
+  }];
+
+  this.desertTwig = [{
+    imageUrl: "https://dl.dropboxusercontent.com/s/rjecm1j9gfqgv5t/Screen%20Shot%202017-01-02%20at%207.04.30%20PM.png?dl=0"
+  }, {
+    imageUrl: "https://dl.dropboxusercontent.com/s/41o02hrc3329qff/Screen%20Shot%202017-01-02%20at%207.05.49%20PM.png?dl=0"
+  }, {
+    imageUrl: "https://dl.dropboxusercontent.com/s/pcpn7fkqpwpub7q/Screen%20Shot%202017-01-02%20at%207.04.52%20PM.png?dl=0"
+  }, {
+    imageUrl: "https://dl.dropboxusercontent.com/s/srd480p7hfoeprm/Screen%20Shot%202017-01-02%20at%207.26.22%20PM.png?dl=0"
+  }, {
+    imageUrl: "https://dl.dropboxusercontent.com/s/2gg4xjf7hhjpsz7/Screen%20Shot%202017-01-02%20at%207.31.12%20PM.png?dl=0"
   }];
 });
 'use strict';
@@ -439,26 +487,6 @@ angular.module('portfolio').directive('navBar', function () {
           "behavior": "smooth"
         });
       };
-
-      // $(function(){
-      //
-      //   $('a[href^="#"]').click(function(){
-      //
-      //     var target = $(this).attr('href');
-      //     var strip = target.slice(1);
-      //     var anchor = $("a[name='" + strip + "']")
-      //
-      //     // e.preventDefault();
-      //
-      //     $('html, body').animate({
-      //
-      //       scrollTop: anchor.offset().top
-      //
-      //     }, 'slow');
-      //
-      //   });
-      //
-      // });
 
       $('a[href*="#"]:not([href="#"])').click(function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {

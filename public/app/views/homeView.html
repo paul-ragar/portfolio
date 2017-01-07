@@ -46,11 +46,34 @@
       <div ng-show="projectContent" class="project-content">
 
         <img src="{{selectedProject.image}}" alt="" />
-        <h1>You're looking at {{selectedProject.title}}</h1>
-        <button ng-click="backToProjectList()" type="button" name="button">Back</button>
+        <h1>{{selectedProject.description}}</h1>
+        <i class="fa fa-chevron-circle-left" ng-click="backToProjectList()" aria-hidden="true"></i>
+        <div class="href-wrapper">
+          <a href="{{selectedProject.hreflink}}">
+            <div class="href-button" ng-click="displayModal(selectedProject.projectFn)">
+              <h2>{{selectedProject.buttontag}}</h2>
+            </div>
+          </a>
+        </div>
+
       </div>
+
     </div>
 
+  </div>
+
+  <div ng-show="desertTwigModal" class="modal-background" ng-click="hideModal()">
+    <div class="left-arrow">
+      <i class="fa fa-chevron-circle-left" ng-click="panLeft()" aria-hidden="true"></i>
+    </div>
+    <div class="right-arrow">
+      <i class="fa fa-chevron-circle-right" ng-click="panRight()" aria-hidden="true"></i>
+    </div>
+    <div class="modal-image-container" ng-style="{transform: translateX(desertTwigSlider.left + '%')}">
+      <div ng-repeat="image in desertTwig" class="image-wrapper">
+        <img src="{{image.imageUrl}}" alt="" />
+      </div>
+    </div>
   </div>
 
   <div class="contact-section">
@@ -79,12 +102,19 @@
             </a>
           </div>
         </div>
+        <div class="resume-wrap">
+          <p></p>
+
+        </div>
       </div>
     </div>
   </div>
 
   <div class="bottom-section">
-    <h2>Now let's draw</h2>
+    <div class="draw-text-wrap">
+      <h2>Now let's draw</h2>
+      <h1>No really, use your cursor and draw a picture</h1>
+    </div>
     <drawing></drawing>
   </div>
 
