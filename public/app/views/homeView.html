@@ -62,16 +62,18 @@
   </div>
 
   <div ng-show="desertTwigModal" class="modal-background" ng-click="hideModal()">
+    <i class="fa fa-times-circle" aria-hidden="true"></i>
+  </div>
+
+  <div ng-show="desertTwigModal" class="modal-image-container">
+    <div  class="image-wrapper">
+      <img src="{{desertTwig[dtIndex].imageUrl}}" alt="" />
+    </div>
     <div class="left-arrow">
       <i class="fa fa-chevron-circle-left" ng-click="panLeft()" aria-hidden="true"></i>
     </div>
     <div class="right-arrow">
       <i class="fa fa-chevron-circle-right" ng-click="panRight()" aria-hidden="true"></i>
-    </div>
-    <div class="modal-image-container" ng-style="{transform: translateX(desertTwigSlider.left + '%')}">
-      <div ng-repeat="image in desertTwig" class="image-wrapper">
-        <img src="{{image.imageUrl}}" alt="" />
-      </div>
     </div>
   </div>
 

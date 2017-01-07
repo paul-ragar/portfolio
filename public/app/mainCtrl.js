@@ -4,9 +4,7 @@ angular.module('portfolio')
   $scope.projectList = true;
   $scope.projectContent = false;
   $scope.desertTwig = mainService.desertTwig;
-  $scope.desertTwigSlider = {
-    left: 0
-  }
+  $scope.dtIndex = 0;
 
   $scope.showProjectContent = (id) => {
     // console.log("Selected Project ID: ",id);
@@ -30,19 +28,23 @@ angular.module('portfolio')
   }
   $scope.hideModal = () => {
     $scope.desertTwigModal = false;
+    $scope.dtIndex = 0;
   }
   $scope.panLeft = () => {
-    $scope.desertTwigModal = true;
 
+    if ($scope.dtIndex === 0) {
+      $scope.dtIndex = 4;
+    } else {
+      $scope.dtIndex -= 1;
+    }
   }
   $scope.panRight = () => {
-    $scope.desertTwigModal = true;
-
-    var currentLeft = $scope.desertTwigSlider.left;
-    console.log(currentLeft);
-    $scope.desertTwigSlider = {
-      "left": -100
+    if ($scope.dtIndex === 4) {
+      $scope.dtIndex = 0;
+    } else {
+      $scope.dtIndex += 1;
     }
+
   }
 
   $scope.openMailer = () => {
