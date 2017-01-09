@@ -43,3 +43,28 @@
 //
 //   }
 // }
+
+
+@media (max-width: 500px) {
+  .box {
+    width: 80%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+  }
+
+
+}
+
+@media (max-width: 350px) {
+  .box {
+    width: 80%;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%,-37%);
+  }
+
+
+
+  //END OF 350px MEDIA QUERY
+}

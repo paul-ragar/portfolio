@@ -25,7 +25,7 @@ angular.module('portfolio')
       $scope.stopDraw = () => {
         $scope.isDrawing = false
         $scope.drawingArr.push($scope.lineArr);
-        console.log("drawingArr: ",$scope.drawingArr);
+        // console.log("drawingArr: ",$scope.drawingArr);
       }
       $scope.lineDraw = () => {
         if ($scope.isDrawing) {

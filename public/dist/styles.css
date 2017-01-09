@@ -442,9 +442,213 @@
   0% {
     left: 0; }
   50% {
-    left: -250px; }
+    left: -85%; }
   100% {
     left: 0; } }
+
+@media (max-width: 500px) {
+  .home-view-container .svg-section .title {
+    width: 90%; }
+    .home-view-container .svg-section .title h2 {
+      font-size: 43px;
+      white-space: normal;
+      text-align: center; }
+  .home-view-container .about-section {
+    flex-direction: column; }
+    .home-view-container .about-section .info-side {
+      height: 15vh;
+      width: 100%; }
+    .home-view-container .about-section .description-side {
+      height: 85vh;
+      width: 100%; }
+      .home-view-container .about-section .description-side .profile-pic {
+        height: 140px; }
+      .home-view-container .about-section .description-side .skill-container .skill-box img {
+        height: 40px;
+        width: 40px; }
+  .home-view-container .projects-section {
+    flex-direction: column; }
+    .home-view-container .projects-section .panel-side {
+      height: 15vh;
+      width: 100%;
+      background-color: #a1a0a5; }
+      .home-view-container .projects-section .panel-side h2 {
+        color: #f0f0f0; }
+    .home-view-container .projects-section .display-side {
+      height: 85vh;
+      width: 100%;
+      background-color: #f0f0f0; }
+  .home-view-container .contact-section {
+    flex-direction: column; }
+    .home-view-container .contact-section .contact-side {
+      height: 15vh;
+      width: 100%; }
+    .home-view-container .contact-section .link-side {
+      height: 85vh;
+      width: 100%; }
+  .home-view-container .projects-section .display-side .images-container {
+    padding: 5px; }
+    .home-view-container .projects-section .display-side .images-container a {
+      width: 50%; }
+      .home-view-container .projects-section .display-side .images-container a .image {
+        height: 190px;
+        width: 90%; }
+  .home-view-container .projects-section .display-side .project-content {
+    background-color: #f0f0f0; }
+    .home-view-container .projects-section .display-side .project-content h1 {
+      font-size: 25px; }
+    .home-view-container .projects-section .display-side .project-content .href-wrapper {
+      margin-top: 15px; }
+  .home-view-container .modal-image-container .left-arrow {
+    top: 100%;
+    left: 20%;
+    transform: translate(-80%, 0); }
+  .home-view-container .modal-image-container .right-arrow {
+    top: 100%;
+    right: 20%;
+    transform: translate(80%, 0); }
+  .home-view-container .contact-section .link-side .contact-wrapper {
+    width: 95%; }
+    .home-view-container .contact-section .link-side .contact-wrapper .contact-info p {
+      font-size: 31px; }
+    .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box h1 {
+      font-size: 25px; }
+    .home-view-container .contact-section .link-side .contact-wrapper .social-wrap p {
+      font-size: 31px; }
+    .home-view-container .contact-section .link-side .contact-wrapper .social-wrap .icon-links {
+      width: 40%; }
+  .home-view-container .bottom-section .draw-text-wrap h2 {
+    white-space: nowrap;
+    font-size: 55px; }
+  .home-view-container .bottom-section .draw-text-wrap h1 {
+    font-size: 19px; }
+  @keyframes title-slide-down {
+    from {
+      top: 15px;
+      opacity: 0; }
+    to {
+      top: 100px;
+      opacity: 1; } } }
+
+@media (max-width: 400px) {
+  .home-view-container {
+    overflow: hidden; }
+    .home-view-container .svg-section .title {
+      width: 90%; }
+      .home-view-container .svg-section .title h2 {
+        font-size: 32px;
+        white-space: normal;
+        text-align: center; }
+    .home-view-container .about-section .description-side {
+      height: 85vh;
+      width: 100%; }
+      .home-view-container .about-section .description-side .profile-pic {
+        height: 140px; }
+      .home-view-container .about-section .description-side h2 {
+        font-size: 20px; }
+      .home-view-container .about-section .description-side p {
+        font-size: 15px;
+        letter-spacing: 0; }
+      .home-view-container .about-section .description-side h3 {
+        font-size: 20px; }
+      .home-view-container .about-section .description-side .skill-container .skill-box img {
+        margin: 5px; }
+    .home-view-container .projects-section .display-side .images-container {
+      padding: 5px; }
+      .home-view-container .projects-section .display-side .images-container a {
+        width: 50%; }
+        .home-view-container .projects-section .display-side .images-container a .image {
+          height: 170px;
+          width: 90%; }
+    .home-view-container .projects-section .display-side .project-content {
+      background-color: #f0f0f0; }
+      .home-view-container .projects-section .display-side .project-content h1 {
+        font-size: 20px; }
+      .home-view-container .projects-section .display-side .project-content .href-wrapper {
+        margin-top: 15px; }
+    .home-view-container .contact-section .link-side .contact-wrapper {
+      width: 95%; }
+      .home-view-container .contact-section .link-side .contact-wrapper .contact-info p {
+        font-size: 22px; }
+      .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box h1 {
+        font-size: 20px; }
+      .home-view-container .contact-section .link-side .contact-wrapper .social-wrap p {
+        font-size: 22px; }
+      .home-view-container .contact-section .link-side .contact-wrapper .social-wrap .icon-links {
+        width: 40%; }
+    .home-view-container .bottom-section .draw-text-wrap h2 {
+      white-space: nowrap;
+      font-size: 45px; }
+    .home-view-container .bottom-section .draw-text-wrap h1 {
+      font-size: 16px; }
+  @keyframes title-slide-down {
+    from {
+      top: 15px;
+      opacity: 0; }
+    to {
+      top: 70px;
+      opacity: 1; } } }
+
+@media (max-width: 350px) {
+  .home-view-container {
+    overflow: hidden; }
+    .home-view-container .svg-section .title {
+      width: 90%; }
+      .home-view-container .svg-section .title h2 {
+        font-size: 32px;
+        white-space: normal;
+        text-align: center; }
+    .home-view-container .about-section .description-side {
+      height: 85vh;
+      width: 100%; }
+      .home-view-container .about-section .description-side .profile-pic {
+        height: 140px; }
+      .home-view-container .about-section .description-side h2 {
+        font-size: 16px; }
+      .home-view-container .about-section .description-side p {
+        font-size: 12px;
+        letter-spacing: 0; }
+      .home-view-container .about-section .description-side h3 {
+        font-size: 16px; }
+      .home-view-container .about-section .description-side .skill-container .skill-box img {
+        height: 35px;
+        width: 35px;
+        margin: 0 5px 5px 5px; }
+    .home-view-container .projects-section .display-side .images-container {
+      padding: 5px; }
+      .home-view-container .projects-section .display-side .images-container a {
+        width: 50%; }
+        .home-view-container .projects-section .display-side .images-container a .image {
+          height: 140px;
+          width: 90%; }
+    .home-view-container .projects-section .display-side .project-content {
+      background-color: #f0f0f0; }
+      .home-view-container .projects-section .display-side .project-content h1 {
+        font-size: 20px; }
+      .home-view-container .projects-section .display-side .project-content .href-wrapper {
+        margin-top: 15px; }
+    .home-view-container .contact-section .link-side .contact-wrapper {
+      width: 95%; }
+      .home-view-container .contact-section .link-side .contact-wrapper .contact-info p {
+        font-size: 22px; }
+      .home-view-container .contact-section .link-side .contact-wrapper .contact-info .email-copy-box h1 {
+        font-size: 20px; }
+      .home-view-container .contact-section .link-side .contact-wrapper .social-wrap p {
+        font-size: 22px; }
+      .home-view-container .contact-section .link-side .contact-wrapper .social-wrap .icon-links {
+        width: 40%; }
+    .home-view-container .bottom-section .draw-text-wrap h2 {
+      white-space: nowrap;
+      font-size: 45px; }
+    .home-view-container .bottom-section .draw-text-wrap h1 {
+      font-size: 16px; }
+  @keyframes title-slide-down {
+    from {
+      top: 15px;
+      opacity: 0; }
+    to {
+      top: 70px;
+      opacity: 1; } } }
 
 .about-container {
   background-color: orangered;
@@ -692,7 +896,8 @@ body {
     font-size: 18px;
     font-family: 'Ubuntu Condensed', sans-serif;
     cursor: pointer;
-    transition: color .7s; }
+    transition: color .7s;
+    white-space: nowrap; }
     .nav-bar-container a:hover {
       color: white; }
   .nav-bar-container p {
@@ -728,3 +933,17 @@ body {
   100% {
     stroke-dashoffset: 0;
     fill: white; } }
+
+@media (max-width: 500px) {
+  .box {
+    width: 80%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -40%); } }
+
+@media (max-width: 350px) {
+  .box {
+    width: 80%;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -37%); } }

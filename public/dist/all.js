@@ -308,7 +308,7 @@ angular.module('portfolio').directive("drawing", function () {
       $scope.stopDraw = function () {
         $scope.isDrawing = false;
         $scope.drawingArr.push($scope.lineArr);
-        console.log("drawingArr: ", $scope.drawingArr);
+        // console.log("drawingArr: ",$scope.drawingArr);
       };
       $scope.lineDraw = function () {
         if ($scope.isDrawing) {

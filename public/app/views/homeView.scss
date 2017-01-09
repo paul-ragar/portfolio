@@ -583,25 +583,423 @@ $kalam: 'Kalam', cursive;
   }
 }
 
-    // @for $i from 1 through 6 {
-    //   &:nth-child(#{$i}) {
-    //     animation: {
-    //       name: living-imgs;
-    //       duration: 20s;
-    //       delay: (1s * $i);
-    //       timing-function: infinite;
-    //     }
-    //   }
-    // }
-
 @keyframes living-imgs {
   0% {
     left: 0;
   }
   50% {
-    left: -250px;
+    left: -85%;
   }
   100% {
     left: 0;
   }
+}
+
+
+// MEDIA QUERIES
+
+@media (max-width: 500px) {
+  .home-view-container {
+    .svg-section {
+      .title {
+        width: 90%;
+        h2 {
+          font-size: 43px;
+          white-space: normal;
+          text-align: center;
+        }
+      }
+    }
+    .about-section{
+      flex-direction: column;
+      .info-side {
+        height: 15vh;
+        width: 100%;
+      }
+      .description-side {
+        height: 85vh;
+        width: 100%;
+        .profile-pic {
+          height: 140px;
+        }
+        h2 {
+
+        }
+        p {
+
+        }
+        .skill-container {
+          .skill-box {
+            img {
+              height: 40px;
+              width: 40px;
+            }
+          }
+        }
+      }
+    }
+    .projects-section {
+      flex-direction: column;
+      .panel-side {
+        height: 15vh;
+        width: 100%;
+        background-color: $projects;
+        h2 {
+          color: rgb(240, 240, 240);
+        }
+      }
+      .display-side {
+        height: 85vh;
+        width: 100%;
+        background-color: rgb(240, 240, 240);
+      }
+    }
+    .contact-section {
+      flex-direction: column;
+      .contact-side {
+        height: 15vh;
+        width: 100%;
+      }
+      .link-side {
+      height: 85vh;
+      width: 100%;
+      }
+    }
+    //PROJECTS BELOW HERE
+    .projects-section {
+      .panel-side {
+
+      }
+      .display-side {
+        .images-container {
+          padding: 5px;
+          a {
+            width: 50%;
+            .image {
+              height: 190px;
+              width: 90%;
+              img {
+              }
+            }
+
+          }
+        }
+        .project-content {
+          background-color: rgb(240, 240, 240);
+          h1 {
+            font-size: 25px;
+          }
+          .href-wrapper {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+    .modal-image-container {
+      .left-arrow {
+        top: 100%;
+        left: 20%;
+        transform: translate(-80%,0);
+      }
+      .right-arrow {
+        top: 100%;
+        right: 20%;
+        transform: translate(80%,0);
+      }
+    }
+    .contact-section {
+      .link-side {
+        .contact-wrapper {
+          width: 95%;
+          .contact-info {
+            p {
+              font-size: 31px;
+            }
+            .email-copy-box {
+              h1 {
+                font-size: 25px;
+              }
+            }
+          }
+          .social-wrap {
+            p {
+              font-size: 31px;
+            }
+            .icon-links {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
+    .bottom-section {
+      .draw-text-wrap {
+        h2 {
+          white-space: nowrap;
+          font-size: 55px;
+        }
+        h1 {
+          font-size: 19px;
+        }
+      }
+    }
+
+  }
+  @keyframes title-slide-down {
+    from {
+      top: 15px;
+      opacity: 0;
+    }
+    to {
+      top: 100px;
+      opacity: 1;
+    }
+  }
+
+
+  //END OF iPhone 6PLUS MEDIA QUERY
+}
+
+@media (max-width: 400px) {
+  .home-view-container {
+    overflow: hidden;
+    .svg-section {
+      .title {
+        width: 90%;
+        h2 {
+          font-size: 32px;
+          white-space: normal;
+          text-align: center;
+        }
+      }
+    }
+    .about-section{
+      .description-side {
+        height: 85vh;
+        width: 100%;
+        .profile-pic {
+          height: 140px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+        p {
+          font-size: 15px;
+          letter-spacing: 0;
+        }
+        h3 {
+          font-size: 20px;
+        }
+        .skill-container {
+          .skill-box {
+            img {
+              margin: 5px;
+            }
+          }
+        }
+      }
+    }
+    .projects-section {
+      .panel-side {
+
+      }
+      .display-side {
+        .images-container {
+          padding: 5px;
+          a {
+            width: 50%;
+            .image {
+              height: 170px;
+              width: 90%;
+              img {
+              }
+            }
+
+          }
+        }
+        .project-content {
+          background-color: rgb(240, 240, 240);
+          h1 {
+            font-size: 20px;
+          }
+          .href-wrapper {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+    .contact-section {
+      .link-side {
+        .contact-wrapper {
+          width: 95%;
+          .contact-info {
+            p {
+              font-size: 22px;
+            }
+            .email-copy-box {
+              h1 {
+                font-size: 20px;
+              }
+            }
+          }
+          .social-wrap {
+            p {
+              font-size: 22px;
+            }
+            .icon-links {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
+    .bottom-section {
+      .draw-text-wrap {
+        h2 {
+          white-space: nowrap;
+          font-size: 45px;
+        }
+        h1 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  @keyframes title-slide-down {
+    from {
+      top: 15px;
+      opacity: 0;
+    }
+    to {
+      top: 70px;
+      opacity: 1;
+    }
+  }
+
+  //END OF iPhone 6 MEDIA QUERY
+}
+
+
+
+@media (max-width: 350px) {
+  .home-view-container {
+    overflow: hidden;
+    .svg-section {
+      .title {
+        width: 90%;
+        h2 {
+          font-size: 32px;
+          white-space: normal;
+          text-align: center;
+        }
+      }
+    }
+    .about-section{
+      .description-side {
+        height: 85vh;
+        width: 100%;
+        .profile-pic {
+          height: 140px;
+        }
+        h2 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 12px;
+          letter-spacing: 0;
+        }
+        h3 {
+          font-size: 16px;
+        }
+        .skill-container {
+          .skill-box {
+            img {
+              height: 35px;
+              width: 35px;
+              margin: 0 5px 5px 5px;
+            }
+          }
+        }
+      }
+    }
+    //PROJECT BELOW here
+    .projects-section {
+      .panel-side {
+
+      }
+      .display-side {
+        .images-container {
+          padding: 5px;
+          a {
+            width: 50%;
+            .image {
+              height: 140px;
+              width: 90%;
+              img {
+              }
+            }
+
+          }
+        }
+        .project-content {
+          background-color: rgb(240, 240, 240);
+          h1 {
+            font-size: 20px;
+          }
+          .href-wrapper {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+    .contact-section {
+      .link-side {
+        .contact-wrapper {
+          width: 95%;
+          .contact-info {
+            p {
+              font-size: 22px;
+            }
+            .email-copy-box {
+              h1 {
+                font-size: 20px;
+              }
+            }
+          }
+          .social-wrap {
+            p {
+              font-size: 22px;
+            }
+            .icon-links {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
+    .bottom-section {
+      .draw-text-wrap {
+        h2 {
+          white-space: nowrap;
+          font-size: 45px;
+        }
+        h1 {
+          font-size: 16px;
+        }
+      }
+    }
+
+  }
+  @keyframes title-slide-down {
+    from {
+      top: 15px;
+      opacity: 0;
+    }
+    to {
+      top: 70px;
+      opacity: 1;
+    }
+  }
+
+  //END OF iPhone 5 MEDIA QUERY
 }

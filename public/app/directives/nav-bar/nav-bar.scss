@@ -23,6 +23,7 @@ $ubu: 'Ubuntu Condensed', sans-serif;
     font-family: 'Ubuntu Condensed', sans-serif;
     cursor: pointer;
     transition: color .7s;
+    white-space: nowrap;
     &:hover {
       color: white;
     }
@@ -44,3 +45,28 @@ $ubu: 'Ubuntu Condensed', sans-serif;
     opacity: 1;
   }
 }
+
+// @media only screen and (max-width: 600px) {
+//   .nav-bar-container {
+//     a {
+//       font-size: 50px;
+//       white-space: nowrap;
+//       margin-bottom: 5px;
+//     }
+//     p {
+//       font-size: 70px;
+//       margin: 0 20px;
+//     }
+//   }
+//   @keyframes nav-slide-up {
+//     from {
+//       bottom: 15px;
+//       opacity: 0;
+//     }
+//     to {
+//       bottom: 40px;
+//       opacity: 1;
+//     }
+//   }
+//
+// }
